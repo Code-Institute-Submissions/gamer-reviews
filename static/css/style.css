@@ -1,3 +1,7 @@
+.row {
+    margin: 0;
+}
+
 a {
     text-decoration: none !important;
 }
@@ -26,12 +30,7 @@ a {
     background-color: #20d8da;
 }
 
-.navbar {
-    padding: 10px;
-}
-
 .social-area {
-    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,6 +38,10 @@ a {
 
 .social-links {
     padding: 5px;
+}
+
+.navigation-area {
+    margin: 0;
 }
 
 .carousel-item {
@@ -52,11 +55,11 @@ a {
     left: 0px;
     height: 100%;
     width: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .about-slides {
-    height: 794px;
+    height: auto;
 }
 
 .about {
@@ -98,13 +101,67 @@ a {
         height: auto;
     }
 
+}
+
+@media only screen and (min-width: 600px) {
+    .login-btn-small {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .about-slides {
+        height: 794px;
+    }
+}
+
+@media only screen and (max-width: 1080px) {
     .about {
         display: none;
     }
 }
 
-@media only screen and (min-width: 600px) {
-        .login-btn-small {
-            display: none;
-        }
+.single-read-review-border {
+    border-left: solid 1px;
+}
+
+.read-review {
+    margin: 50px;
+}
+
+.read-review-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: #20d8da;
+}
+
+.read-review-img {
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 992px) {
+    .single-read-review {
+        width: 400px;
+        margin: auto;
+        padding-top: 20px;
+        padding-left: 0;
+        padding-right: 0;
     }
+    
+    .single-read-review-border {
+        border: none;
+    }
+    
+    
+}
+
+
+
+
