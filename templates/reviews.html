@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+        {% for review in reviews %}
+            {{review.user_name}}
+            {{review.name_of_genre}}
+            {{review.name_of_dev}}
+            {{review.genre}}
+            {{review.gameplay}}
+            {{review.story}}
+            {{review.production_quality}}
+            {{review.price}}
+            {{review.platforms}}
+            {{review.review_body}}
+        {% endfor %}
+{% endblock %}        
+
+ 
