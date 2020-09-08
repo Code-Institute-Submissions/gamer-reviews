@@ -1,5 +1,14 @@
 .row {
     margin: 0;
+    padding: 0;
+}
+
+.col-12,
+.col-4,
+.col-8, 
+.col-6 {
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -31,6 +40,7 @@ a {
 }
 
 .social-area {
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +51,7 @@ a {
 }
 
 .navigation-area {
-    margin: 0;
+    padding: 0;
 }
 
 .carousel-item {
@@ -154,14 +164,111 @@ a {
         padding-left: 0;
         padding-right: 0;
     }
-    
+
     .single-read-review-border {
         border: none;
     }
-    
-    
+
+
+}
+
+.monthly-picks {
+    background-color: #000000;
+    color: #fafafa;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.monthly-picks-area {
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.this-months-picks-heading {
+    padding-top: 100px;
+    z-index: 7000;
+}
+
+.monthly-picks-btn {
+    margin-top: 50px;
+    background-color: #20d8da;
+}
+
+.owl-carousel {
+    margin-top: 50px;
+}
+
+.monthly-picks-btn-area {
+    border-bottom: solid 1px #7d7a7c;
+    padding: 0;
+}
+
+.months-pick-heading-area {
+    padding: 0;
+}
+
+.monthly-pick-image {
+    height: 554px;
+}
+
+.slide-text {
+    margin-top: 20px;
+}
+
+.meta-data {
+    margin-top: 10px;
+}
+
+.opaque-background {
+    position: relative;
+    z-index: 6000;
+}
+
+.opaque-background::before {
+    position: absolute;
+    width: 100%;
+    height: 682px;
+    left: -1110px;
+    content: '';
+    background-color: rgba(14, 14, 14, 0.8);
+    z-index: 6000;
+    overflow: hidden;
 }
 
 
+.opaque-background::after {
+    position: absolute;
+    width: 100%;
+    height: 682px;
+    left: 1110px;
+    content: '';
+    background-color: rgba(14, 14, 14, 0.8);
+    z-index: 6000;
+    overflow: hidden;
+}
 
+.owl-nav {
+    display: none;
+}
 
+.articles {
+    width: 60%;
+    margin: auto;
+}
+
+.articles-heading {
+    padding-top: 100px;
+}
+
+.article-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.article-img {
+    width: 100%;
+    height: 300px;
+}

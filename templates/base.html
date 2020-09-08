@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
     <title>GamerReview</title>
@@ -48,8 +50,8 @@
                 </div>
             </div>
         </div>
-        <div class="row navigation-area">
-            <div class="col-6 container">
+        <div class="row">
+            <div class="col-6 navigation-area">
                 <nav class="navbar navbar-expand-md navbar-light">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -164,9 +166,150 @@
             </div>
         </div>
     </section>
+    <section class="monthly-picks">
+        <div class="monthly-picks-area">
+            <div class="row">
+                <div class="col-12 months-pick-heading-area">
+                    <h3 class="this-months-picks-heading">This Months Picks</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 monthly-picks-btn-area">
+                    <a><button class="btn btn-success monthly-picks-btn">Popular</button></a>
+                    <a><button class="btn btn-success monthly-picks-btn">Latest</button></a>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="opaque-background"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel">
+                <div class="item">
+                    <img src="static/images/placeholder.png" class="monthly-pick-image">
+                    <div class="slide-text">
+                        <a class="game-title">Game Title</a>
+                        <div class="meta-data">
+                            <a>User: 9.1/10</a>
+                            <a>Genre</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="static/images/placeholder.png" class="monthly-pick-image">
+                    <div class="slide-text">
+                        <a class="game-title">Game Title</a>
+                        <div class="meta-data">
+                            <a>User: 9.1/10</a>
+                            <a>Genre</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="static/images/placeholder.png" class="monthly-pick-image">
+                    <div class="slide-text">
+                        <a class="game-title">Game Title</a>
+                        <div class="meta-data">
+                            <a>User: 9.1/10</a>
+                            <a>Genre</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="static/images/placeholder.png" class="monthly-pick-image">
+                    <div class="slide-text">
+                        <a class="game-title">Game Title</a>
+                        <div class="meta-data">
+                            <a>User: 9.1/10</a>
+                            <a>Genre</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="static/images/placeholder.png" class="monthly-pick-image">
+                    <div class="slide-text">
+                        <a class="game-title">Game Title</a>
+                        <div class="meta-data">
+                            <a>User: 9.1/10</a>
+                            <a>Genre</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="static/images/placeholder.png" class="monthly-pick-image">
+                    <div class="slide-text">
+                        <a class="game-title">Game Title</a>
+                        <div class="meta-data">
+                            <a>User: 9.1/10</a>
+                            <a>Genre</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="static/images/placeholder.png" class="monthly-pick-image">
+                    <div class="slide-text">
+                        <a class="game-title">Game Title</a>
+                        <div class="meta-data">
+                            <a>User: 9.1/10</a>
+                            <a>Genre</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="static/images/placeholder.png" class="monthly-pick-image">
+                    <div class="slide-text">
+                        <a class="game-title">Game Title</a>
+                        <div class="meta-data">
+                            <a>User: 9.1/10</a>
+                            <a>Genre</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="static/images/placeholder.png" class="monthly-pick-image">
+                    <div class="slide-text">
+                        <a class="game-title">Game Title</a>
+                        <div class="meta-data">
+                            <a>User: 9.1/10</a>
+                            <a>Genre</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="static/images/placeholder.png" class="monthly-pick-image">
+                    <div class="slide-text">
+                        <a class="game-title">Game Title</a>
+                        <div class="meta-data">
+                            <a>User: 9.1/10</a>
+                            <a>Genre</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="articles">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="articles-heading">Latest Articles</h3>
+            </div>
+        </div>
+        <div class="row article-area container">
+            <div class="col-4">
+                <img src="static/images/placeholder.png" class="article-img">
+            </div>
+            <div class="col-8">
+                
+            </div>
+        </div>
+    </section>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/carousel.js')}}"></script>
 </body>
 
 </html>
