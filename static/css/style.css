@@ -262,13 +262,20 @@ a {
 }
 
 .article-area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: auto;
+    padding-top: 50px;
 }
 
 .article-img {
     width: 100%;
     height: 300px;
+}
+
+.article-heading {
+    padding-left: 20px;
+}
+
+.article-content {
+    padding-left: 20px;
+    overflow: hidden;
 }
