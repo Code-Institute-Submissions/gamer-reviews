@@ -1,6 +1,5 @@
 .row {
     margin: 0;
-    padding: 0;
 }
 
 .col-12,
@@ -13,6 +12,10 @@
 
 a {
     text-decoration: none !important;
+}
+
+li {
+    list-style: none !important;
 }
 
 .header {
@@ -178,6 +181,7 @@ a {
     position: relative;
     z-index: 1;
     overflow: hidden;
+    padding-bottom: 50px;
 }
 
 .monthly-picks-area {
@@ -210,6 +214,10 @@ a {
 
 .monthly-pick-image {
     height: 554px;
+}
+
+.game-title {
+    color: #fafafa;
 }
 
 .slide-text {
@@ -255,15 +263,17 @@ a {
 .articles {
     width: 60%;
     margin: auto;
+    padding-top: 100px;
 }
 
 .articles-heading {
-    padding-top: 100px;
+    padding-top: 20px;
 }
 
 .article-area {
     margin: auto;
     padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .article-img {
@@ -273,9 +283,110 @@ a {
 
 .article-heading {
     padding-left: 20px;
+    color: #000000;
 }
 
 .article-content {
     padding-left: 20px;
     overflow: hidden;
+    height: 308px;
+}
+
+@media only screen and (max-width: 600px) {
+    
+    .monthly-picks-area {
+        width: 90%;
+        margin: auto;
+    }
+    
+    .articles {
+        width: 90%;
+    }
+    
+    .article-content {
+        height: 118px;
+    }
+    
+    .article-img {
+        height: 220px;
+    }
+    
+    .monthly-pick-image {
+        height: 354px;
+    }
+}
+
+.footer-area {
+    background-color: #000000;
+    color: #fafafa;
+    width: 100%;
+}
+
+.footer-inner {
+    width: 70%;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.about-footer-area {
+    padding-left: 40px;
+}
+
+.reviews-footer-area {
+    padding-left: 40px;
+}
+
+.usefull-links-area {
+    padding-left: 40px;
+}
+
+.about-footer-heading {
+    padding-bottom: 50px;
+}
+
+.reviews-footer-heading {
+    padding-bottom: 50px;
+}
+
+.usefull-links-heading {
+    margin: 0;
+    padding-bottom: 50px;
+}
+
+.reviews-footer-content {
+    padding: 0;
+    margin: 0;
+}
+
+.usefull-links-content {
+    padding: 0;
+    margin: 0;
+}
+
+.footer-list {
+    padding-bottom: 10px;
+}
+
+.a-footer {
+    color: #fafafa;
+}
+
+@media only screen and (max-width: 992px) {
+    .footer-inner {
+        width: 90%;
+        margin: auto;
+    }
+    
+    .about-footer-heading {
+        padding-top: 50px;
+    }
+    
+    .usefull-links-heading {
+        padding-top: 50px;
+    }
+    
+    .reviews-footer-heading {
+        padding-top: 50px;
+    }
 }
