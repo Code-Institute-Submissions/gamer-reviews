@@ -11,14 +11,20 @@ app.config["MONGO_URI"] = 'mongodb+srv://joe:Drumgoon6894@gamerreview.85ibj.mong
 mongo = PyMongo(app)
 
 @app.route('/')
-@app.route('/get_index')
-def get_index():
-    return render_template("index.html",)
+@app.route('/index')
+def index():
+    return render_template("index.html", reviews=mongo.db.reviews.find())
     
-@app.route('/get_reviews')
-def get_reviews():
-    return render_template("reviews.html")
+@app.route('/articles')
+def articles():
+    return render_template("articles.html", reviews=mongo.db.reviews.find())
+
+@app.route('/single-article')
+def single-article():
+    return render_template("single-article.html", reviews=mongo.db.reviews.find())
     
+@app.route()
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
