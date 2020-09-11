@@ -19,11 +19,13 @@ def index():
 def articles():
     return render_template("articles.html", reviews=mongo.db.reviews.find())
 
-@app.route('/single-article')
-def single-article():
+@app.route('/single_article')
+def single_article():
     return render_template("single-article.html", reviews=mongo.db.reviews.find())
     
-@app.route()
+@app.route('/reviews')
+def reviews():
+    return render_template("reviews.html", reviews=mongo.db.reviews.find())
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
