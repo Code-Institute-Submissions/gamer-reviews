@@ -1,0 +1,141 @@
+{% extends 'base.html' %} {% block content %}
+<section>
+    <div class="row container-fluid hero-image-area">
+        <div class="col-12 hero-image">
+            <img src="static/images/black-ops-bg.jpg" class="hero-image">
+            <div class="black-overlay">
+                <div>
+                    <div class="reviews-hero-heading">
+                        My Reviews
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="reviews">
+    <div class="row filter-search-area">
+        <div class="col-6 filter-area">
+            <select name="select-filter" class="filter">
+                <option value="" class="filter-option" disabled selected>Filter By Genre</option>
+                <option value="Action" class="filter-option">Action</option>
+                <option value="Action-Adventure" class="filter-option">Action-Adventure</option>
+                <option value="Adventure" class="filter-option">Adventure</option>
+                <option value="Role-Playing" class="filter-option">Role-Playing</option>
+                <option value="Simulation" class="filter-option">Simulation</option>
+                <option value="Strategy" class="filter-option">Strategy</option>
+                <option value="sports" class="filter-option">Sports</option>
+            </select>
+        </div>
+        <div class="col-6 search-area">
+            <form>
+                <input type="search" name="review-search" id="review-search" class="search" placeholder="search"></input>
+                <button type="submit" class="btn btn-success search-btn"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h3 class="reviews-heading">My Reviews</h3>
+        </div>
+    </div>
+    <div class="row review-area container">
+        <div class="col-4">
+            <img src="static/images/placeholder.png" class="review-img">
+        </div>
+        <div class="col-8">
+            <h4 class="review-heading">Review Heading</h4>
+            <p class="review-heading">01/9/20</p>
+            <div>
+                <p class="review-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
+                    amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in
+                </p>
+                <button class="star-btn"><i class="fa fa-star star-fill-btn"></i><i class="fa fa-star star-fill-btn"></i><i class="fa fa-star star-fill-btn"></i><i class="fa fa-star star-empty-btn"></i><i class="fa fa-star star-empty-btn"></i></button>
+                <a href="#"><button class="btn-success btn read-article-btn">Read Review</button></a>
+            </div>
+        </div>
+    </div>
+    <div class="row review-area container">
+        <div class="col-4">
+            <img src="static/images/placeholder.png" class="review-img">
+        </div>
+        <div class="col-8">
+            <a href="#">
+                <h4 class="review-heading">Review Heading</h4>
+            </a>
+            <p class="review-heading">01/9/20</p>
+            <div>
+                <p class="review-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
+                    amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in
+                </p>
+                <button class="star-btn"><i class="fa fa-star star-fill-btn"></i><i class="fa fa-star star-fill-btn"></i><i class="fa fa-star star-fill-btn"></i><i class="fa fa-star star-empty-btn"></i><i class="fa fa-star star-empty-btn"></i></button>
+                <a href="#"><button class="btn-success btn read-article-btn">Read Review</button></a>
+            </div>
+        </div>
+    </div>
+    <div class="row review-area container">
+        <div class="col-4">
+            <img src="static/images/placeholder.png" class="review-img">
+        </div>
+        <div class="col-8">
+            <a href="#">
+                <h4 class="review-heading">Review Heading</h4>
+            </a>
+            <p class="review-heading">01/9/20</p>
+            <div>
+                <p class="review-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
+                    amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in
+                </p>
+                <button class="star-btn"><i class="fa fa-star star-fill-btn"></i><i class="fa fa-star star-fill-btn"></i><i class="fa fa-star star-fill-btn"></i><i class="fa fa-star star-empty-btn"></i><i class="fa fa-star star-empty-btn"></i></button>
+                <a href="#"><button class="btn-success btn read-article-btn">Read Review</button></a>
+            </div>
+        </div>
+    </div>
+    <div class="row review-area container">
+        <div class="col-4">
+            <img src="static/images/placeholder.png" class="review-img">
+        </div>
+        <div class="col-8">
+            <a href="#">
+                <h4 class="review-heading">Review Heading</h4>
+            </a>
+            <p class="review-heading">01/9/20</p>
+            <div>
+                <p class="review-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
+                    amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in
+                </p>
+                <button class="star-btn"><i class="fa fa-star star-fill-btn"></i><i class="fa fa-star star-fill-btn"></i><i class="fa fa-star star-fill-btn"></i><i class="fa fa-star star-empty-btn"></i><i class="fa fa-star star-empty-btn"></i></button>
+                <a href="#"><button class="btn-success btn read-article-btn">Read Review</button></a>
+            </div>
+        </div>
+    </div>
+    <div class="row review-area container">
+        <div class="col-4">
+            <img src="static/images/placeholder.png" class="review-img">
+        </div>
+        <div class="col-8">
+            <a href="#">
+                <h4 class="review-heading">Review Heading</h4>
+            </a>
+            <p class="review-heading">01/9/20</p>
+            <div>
+                <p class="review-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
+                    amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in
+                </p>
+                <button class="star-btn"><i class="fa fa-star star-fill-btn"></i><i class="fa fa-star star-fill-btn"></i><i class="fa fa-star star-fill-btn"></i><i class="fa fa-star star-empty-btn"></i><i class="fa fa-star star-empty-btn"></i></button>
+                <a href="#"><button class="btn-success btn read-article-btn">Read Review</button></a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

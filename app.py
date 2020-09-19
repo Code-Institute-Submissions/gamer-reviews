@@ -38,6 +38,10 @@ def write_review():
 @app.route('/contact')
 def contact():
     return render_template('contact.html', reviews=mongo.db.reviews.find())
+    
+@app.route('/my_reviews')
+def my_reviews():
+    return render_template('my-reviews.html', reviews=mongo.db.reviews.find())
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
