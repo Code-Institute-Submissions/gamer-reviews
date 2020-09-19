@@ -752,3 +752,188 @@ li {
     }
 }
 
+.single-review-img {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+.single-review-img-area {
+    padding-top: 100px;
+}
+
+.single-review-heading {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 30px;
+}
+
+.genre-review,
+.date-review {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: auto;
+}
+
+.single-review-content {
+    padding-top: 30px;
+}
+
+.fa-twitch {
+    padding-left: 10px;
+}
+
+.buy-game-btn {
+    background-color:  #20d8da;
+    border: none;
+    margin-bottom: 50px;
+}
+
+.twitch-btn {
+    background-color: #20d8da;
+    border: none;
+    margin-bottom: 50px;
+}
+
+.author {
+    float: right;
+}
+
+.bar-ratings {
+    margin-top: 250px;
+}
+
+.progress {
+    margin: 20px;
+}
+
+.rating-border {
+    border-bottom: solid 1px lightgrey;
+    margin: 40px;
+}
+
+@media only screen and (max-width: 992px) {
+    .bar-ratings {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+}
+
+.write-a-review {
+    width: 70%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.form-control {
+    margin-left: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 70%;
+}
+
+.form-check {
+    display: inline-block;
+    margin: 10px;
+}
+
+.write-review-text {
+    width: 100%;
+}
+
+.submit-btn-area {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-btn {
+    background-color:  #20d8da;
+    border: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .write-a-review{
+        width: 90%;
+        margin: auto;
+        margin-top: 50px;
+    }
+    
+    .form-control {
+        width: 100%;
+    }
+}
+
+.contact-area {
+    width: 70%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 6px;
+}
+
+.fa-home {
+    padding-right: 30px;
+}
+
+.fa-envelope {
+    padding-right: 30px;
+}
+
+.fa-phone {
+    padding-right: 40px;
+}
+
+.contact-form {
+    width: 70%;
+    margin: auto;
+}
+
+.contact-input-name {
+    width: 100%;
+    margin-right: 10px;
+}
+
+.contact-input-email {
+    width: 100%;
+    margin-left: 10px;
+}
+
+.contact-input-subject {
+    width: 100%;
+}
+
+.input-textarea {
+    width: 100%;
+}
+
+.send-message-btn {
+    width: 100%;
+    background-color: #20d8da;
+    border: none;
+    margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 992px) {
+    .contact-area {
+        width: 90%;
+    }
+    
+    .contact-form {
+        width: 90%;
+    }
+}
