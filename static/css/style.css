@@ -43,6 +43,53 @@ li {
     background-color: #20d8da;
 }
 
+.input-modal-login {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.modal-login-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.input-check {
+    display: inline-block;
+}
+
+span.psw {
+    float: right;
+}
+
+.modal-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.modal-switch {
+    background-color: #20d8da;
+    border: none;
+}
+
+.modal-login-btn {
+    background-color: #20d8da;
+}
+
+.modal-register {
+    display: none;
+}
+
 .social-area {
     padding: 0;
     display: flex;
@@ -265,14 +312,15 @@ li {
     display: none;
 }
 
-.articles {
+.articles-home {
     width: 60%;
     margin: auto;
     padding-top: 100px;
 }
 
 .articles-heading {
-    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 10px;
 }
 
 .article-area {
@@ -283,12 +331,8 @@ li {
 
 .article-img {
     width: 100%;
-    height: 300px;
-}
-
-.article-heading {
-    padding-left: 20px;
-    color: #000000;
+    height: 221px;
+    margin-bottom: 40px;
 }
 
 .article-content {
@@ -299,55 +343,37 @@ li {
 
 .read-article-btn {
     margin-left: 20px;
+    margin-bottom: 20px;
     background-color: #20d8da;
 }
 
-@media only screen and (max-width: 1550px) {
-    .articles {
-        width: 70%;
-    }
-}
-
-@media only screen and (max-width: 1200px) {
-    .articles {
-        width: 80%;
-    }
-}
-
-@media only screen and (max-width: 1050px) {
-    .articles {
+@media only screen and (max-width: 1036px) {
+    .articles-home {
         width: 90%;
     }
 }
 
 @media only screen and (max-width: 992px) {
-    .article-content {
-        height: 248px;
-        overflow: hidden;
+    .articles-home {
+        width: 90%;
     }
 }
 
-@media only screen and (max-width: 600px) {
-
-    .monthly-picks-area {
-        width: 90%;
-        margin: auto;
+@media only screen and (max-width: 1327px) {
+    .articles-home {
+        width: 80%;
     }
+}
 
-    .articles {
-        width: 90%;
+@media only screen and (max-width: 466px) {
+    .articles-home {
+        width: 95%;
     }
+}
 
+@media only screen and (max-width: 843px) {
     .article-content {
-        height: 118px;
-    }
-
-    .article-img {
-        height: 220px;
-    }
-
-    .monthly-pick-image {
-        height: 354px;
+        display: none;
     }
 }
 
@@ -514,7 +540,7 @@ li {
 
 @media only screen and (max-width: 830px) {
     .filter {
-        width: 150px;                        
+        width: 150px;
     }
 
     .search {
@@ -620,7 +646,7 @@ li {
         width: 90%;
         margin: auto;
     }
-    
+
     .single-article-content {
         width: 90%;
         margin: auto;
@@ -792,7 +818,7 @@ li {
 }
 
 .buy-game-btn {
-    background-color:  #20d8da;
+    background-color: #20d8da;
     border: none;
     margin-bottom: 50px;
 }
@@ -857,17 +883,17 @@ li {
 }
 
 .submit-btn {
-    background-color:  #20d8da;
+    background-color: #20d8da;
     border: none;
 }
 
 @media only screen and (max-width: 768px) {
-    .write-a-review{
+    .write-a-review {
         width: 90%;
         margin: auto;
         margin-top: 50px;
     }
-    
+
     .form-control {
         width: 100%;
     }
@@ -932,7 +958,7 @@ li {
     .contact-area {
         width: 90%;
     }
-    
+
     .contact-form {
         width: 90%;
     }

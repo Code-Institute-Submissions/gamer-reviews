@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
     <script type="text/javascript" src="{{url_for('static', filename='js/get-articles.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='js/modal.js')}}"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
     <title>GamerReview</title>
 </head>
 
@@ -34,17 +35,51 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                                    <div class="container">
+                                        <h4>GamerReviews</h4>
+                                    </div>
+                                    <div class="modal-btns container">
+                                        <button class="btn btn-success modal-switch" onclick="modalSwitchLogin()">Login</button>
+                                        <button class="btn btn-success modal-switch" onclick="modalSwitchRegister()">Register</button>
+                                    </div>
                                 </div>
-                                <div class="modal-body">
-                                    Login
+                                <div class="modal-login">
+                                    <form method="post">
+                                        <div class="container">
+                                            <label for="uname"><b>Username</b></label>
+                                            <input type="text" placeholder="Enter Username" name="uname" class="input-modal-login" required>
+                                            
+                                            <label for="psw"><b>Password</b></label>
+                                            <input type="password" placeholder="Password" name="psw" class="input-modal-login" required>
+                                            <button type="submit" class="modal-login-btn">Login</button>
+                                            <div class="container">
+                                                <label>
+                                                    <input class="input-check" type="checkbox" checked="checked" name="remember">Remember Me
+                                                </label>
+                                                <span class="psw">Forgot<a href="#">Password</a></span>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="waves-effect waves-light btn" data-dismiss="modal">Close</button>
-                                    <button type="button" class="waves-effect waves-light btn">Save changes</button>
+                                <div class="modal-register">
+                                    <form method="post">
+                                        <div class="container">
+                                            <label for="uname"><b>Username</b></label>
+                                            <input type="text" placeholder="Enter Username" name="uname" class="input-modal-login" required>
+                                            
+                                            <label for="psw"><b>Password</b></label>
+                                            <input type="password" placeholder="Password" name="psw" class="input-modal-login" required>
+                                            
+                                            <label for="psw"><b>Repeat Password</b></label>
+                                            <input type="password" placeholder="Password" name="psw" class="input-modal-login" required>
+                                            <button type="submit" class="modal-login-btn">Register</button>
+                                            <div class="container">
+                                                <label>
+                                                    <input class="input-check" type="checkbox" checked="checked" name="remember">Remember Me
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -61,23 +96,23 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="{{url_for('templates', filename='index.html')}}">Home<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Reviews
                             </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Reviews</a>
-                                    <a class="dropdown-item" href="#">Write A Review</a>
-                                    <a class="dropdown-item" href="#">My Reviews</a>
+                                    <a class="dropdown-item" href="{{url_for('templates', filename='reviews.html')}}">Reviews</a>
+                                    <a class="dropdown-item" href="{{url_for('templates', filename='write-review.html')}}">Write A Review</a>
+                                    <a class="dropdown-item" href="{{url_for('templates', filename='my-reviews.html')}}">My Reviews</a>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">News</a>
+                                <a class="nav-link" href="{{url_for('templates', filename='articles.html')}}">News</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
+                                <a class="nav-link" href="{{url_for('templates', filename='contact.html')}}">Contact</a>
                             </li>
                         </ul>
                     </div>
