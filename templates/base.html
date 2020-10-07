@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="{{url_for('static', filename='js/get-articles.js')}}"></script>
-    <script type="text/javascript" src="{{url_for('static', filename='js/modal.js')}}"></script>
+    {% block scripts %}{% endblock %}
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
     <title>GamerReview</title>
 </head>
@@ -22,68 +21,16 @@
         <div class="top-header-area">
             <div class="row">
                 <div class="col-6 container logo-area">
-                    <a href="base.html">
+                    <a href="{{url_for('index')}}">
                         <h2 class="logo">GamerReviews</h2>
                     </a>
                 </div>
                 <div class="col-6 container login-area">
-                    <button type="button" class="login-btn btn btn-success" data-toggle="modal" data-target="#loginModal">
-                        Login/Register<span><button class="login-btn-small btn btn-success" data-toggle="modal" data-target="#loginModal"><i class="fa fa-lock"></i></span></button>
-                    </button>
-                    <!-- login/register Modal -->
-                    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <div class="container">
-                                        <h4>GamerReviews</h4>
-                                    </div>
-                                    <div class="modal-btns container">
-                                        <button class="btn btn-success modal-switch" onclick="modalSwitchLogin()">Login</button>
-                                        <button class="btn btn-success modal-switch" onclick="modalSwitchRegister()">Register</button>
-                                    </div>
-                                </div>
-                                <div class="modal-login">
-                                    <form method="post">
-                                        <div class="container">
-                                            <label for="uname"><b>Username</b></label>
-                                            <input type="text" placeholder="Enter Username" name="uname" class="input-modal-login" required>
-                                            
-                                            <label for="psw"><b>Password</b></label>
-                                            <input type="password" placeholder="Password" name="psw" class="input-modal-login" required>
-                                            <button type="submit" class="modal-login-btn">Login</button>
-                                            <div class="container">
-                                                <label>
-                                                    <input class="input-check" type="checkbox" checked="checked" name="remember">Remember Me
-                                                </label>
-                                                <span class="psw">Forgot<a href="#">Password</a></span>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="modal-register">
-                                    <form method="post">
-                                        <div class="container">
-                                            <label for="uname"><b>Username</b></label>
-                                            <input type="text" placeholder="Enter Username" name="uname" class="input-modal-login" required>
-                                            
-                                            <label for="psw"><b>Password</b></label>
-                                            <input type="password" placeholder="Password" name="psw" class="input-modal-login" required>
-                                            
-                                            <label for="psw"><b>Repeat Password</b></label>
-                                            <input type="password" placeholder="Password" name="psw" class="input-modal-login" required>
-                                            <button type="submit" class="modal-login-btn">Register</button>
-                                            <div class="container">
-                                                <label>
-                                                    <input class="input-check" type="checkbox" checked="checked" name="remember">Remember Me
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="{{url_for('login')}}">
+                        <button type="button" class="login-btn btn btn-success">
+                            Login/Register<span><button class="login-btn-small btn btn-success"><i class="fa fa-lock"></i></span></button>
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -96,23 +43,23 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="{{url_for('templates', filename='index.html')}}">Home<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="{{url_for('index')}}">Home<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Reviews
                             </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{url_for('templates', filename='reviews.html')}}">Reviews</a>
-                                    <a class="dropdown-item" href="{{url_for('templates', filename='write-review.html')}}">Write A Review</a>
-                                    <a class="dropdown-item" href="{{url_for('templates', filename='my-reviews.html')}}">My Reviews</a>
+                                    <a class="dropdown-item" href="{{url_for('reviews')}}">Reviews</a>
+                                    <a class="dropdown-item" href="{{url_for('write_review')}}">Write A Review</a>
+                                    <a class="dropdown-item" href="{{url_for('my_reviews')}}">My Reviews</a>
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{url_for('templates', filename='articles.html')}}">News</a>
+                                <a class="nav-link" href="{{url_for('articles')}}">News</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{url_for('templates', filename='contact.html')}}">Contact</a>
+                                <a class="nav-link" href="{{url_for('contact')}}">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -127,7 +74,7 @@
             </div>
         </div>
     </header>
-        {% block content %} {% endblock %}
+    {% block content %} {% endblock %}
     <footer class="footer-area">
         <div class="row footer-inner">
             <div class="col-lg-4 about-footer-area">

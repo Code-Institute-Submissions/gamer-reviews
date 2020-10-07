@@ -43,7 +43,12 @@ li {
     background-color: #20d8da;
 }
 
-.input-modal-login {
+.login-section {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.login-input {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -52,7 +57,7 @@ li {
     box-sizing: border-box;
 }
 
-.modal-login-btn {
+.submit-login-btn {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -70,24 +75,20 @@ span.psw {
     float: right;
 }
 
-.modal-btns {
+.form-btns {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
 }
 
-.modal-switch {
+.form-switch {
     background-color: #20d8da;
     border: none;
 }
 
-.modal-login-btn {
+.submit-login-btn {
     background-color: #20d8da;
-}
-
-.modal-register {
-    display: none;
 }
 
 .social-area {
