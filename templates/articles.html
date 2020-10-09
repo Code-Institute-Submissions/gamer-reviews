@@ -1,8 +1,6 @@
-{% extends 'base.html' %} 
-{% block scripts %}
+{% extends 'base.html' %} {% block scripts %}
 <script type="text/javascript" src="static/js/get-articles-news.js"></script>
-{% endblock %}
-{% block content %}
+{% endblock %} {% block content %}
 <section>
     <div class="row container-fluid hero-image-area">
         <div class="col-12 hero-image">
@@ -43,8 +41,19 @@
             <h3 class="reviews-heading">Latest Articles</h3>
         </div>
     </div>
-    <div id="articles">
-        
+    <div class="row articles-area" id="articles">
+
     </div>
+
+    <body>
+        <div style="text-align:center;">
+            <input type="button" id="first" onclick="firstPage()" value="first" />
+            <input type="button" id="next" onclick="nextPage()" value="next" />
+            <input type="button" id="previous" onclick="previousPage()" value="previous" />
+            <input type="button" id="last" onclick="lastPage()" value="last" />
+
+            <div id="list"></div>
+        </div>
+    </body>
 </section>
 {% endblock %}

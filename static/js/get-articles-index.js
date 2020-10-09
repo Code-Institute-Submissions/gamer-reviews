@@ -34,3 +34,5 @@ xhr.onload = () => {
         </div>`;
     }).join('');
 };
+
+console.log(myArticles);

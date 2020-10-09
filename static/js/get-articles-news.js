@@ -6,7 +6,7 @@ xhr = new XMLHttpRequest();
 
 xhr.open("GET", "http://www.gamespot.com/api/articles/?api_key=000baa7b080b00acf213f8f9b66c4b63ee0acbff&format=json&filter=publish_date:2020-09-01%7c2020-09-31&limit=15");
 xhr.send();
-xhr.onload = () => {
+xhr.onload = (myArticles) => {
     console.log(xhr);
     if (xhr.status == 200) {
         data = JSON.parse(xhr.response);
@@ -34,3 +34,7 @@ xhr.onload = () => {
         </div>`;
     }).join('');
 };
+
+function pagination(myArticles) {
+    console.log(myArticles);
+}
