@@ -15,6 +15,7 @@ xhr.onload = () => {
     }
     myArticles = data.results;
     console.log(myArticles);
+    
     document.getElementById("articles").innerHTML = myArticles.map((i) => {
         return `
         <div class="col-4">
@@ -35,4 +36,3 @@ xhr.onload = () => {
     }).join('');
 };
 
-console.log(myArticles);
