@@ -39,9 +39,9 @@ xhr.onload = () => {
 
 function injectPagination() {
     pagingList = `
-            <li class="page-item"><a class="page-link" href="javascript:void(0)" onclick="goPrevious()">Previous</a></li>
-            <li class="page-item"><span class="page-link" id="spanSelectedPage">${selectedPage} | ${myArticlesPages.length}</span></li>
-            <li class="page-item"><a class="page-link" href="javascript:void(0)" onclick="goNext()">Next</a></li>`;
+            <li class="page-item pagination-btn"><a class="page-link" href="#" onclick="goPrevious()">Previous</a></li>
+            <li class="page-item pagination-btn"><span class="page-link" id="spanSelectedPage">${selectedPage} | ${myArticlesPages.length}</span></li>
+            <li class="page-item pagination-btn"><a class="page-link" href="#" onclick="goNext()">Next</a></li>`;
 
     document.getElementById("paging").innerHTML = pagingList;
 }
@@ -55,7 +55,7 @@ function injectPage() {
             <img src="${i.image.original}" class="article-img">
         </div>
         <div class="col-8">
-            <a href="#">
+            <a href="{{url_for('single_article')}}">
                 <h4 class="articles-heading">${i.title}</h4>
             </a>
             <h6 class="articles-heading">${i.publish_date}</h6>

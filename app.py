@@ -27,6 +27,8 @@ def login():
         if bcrypt.hashpw(request.form['password'].encode('utf-8'), login_user['password']) == login_user['password']:
             session['username'] = request.form['username']
             return render_template('index.html')
+        else:
+            return "invalid login details"
 
     return render_template('login.html')
     
@@ -52,7 +54,7 @@ def articles():
 
 @app.route('/single_article')
 def single_article():
-    return render_template("single-article.html", reviews=mongo.db.reviews.find())
+    return render_template("single-article.html")
     
 @app.route('/reviews')
 def reviews():
@@ -62,9 +64,24 @@ def reviews():
 def single_review():
     return render_template("single-review.html", reviews=mongo.db.reviews.find())
     
-@app.route('/write_review')
+@app.route('/write_review', methods=["POST", "GET"])
 def write_review():
-    return render_template("write-review.html", review=mongo.db.reviews.find())
+    if 'username' not in session:
+        return render_template('must-login.html')
+    reviews = mongo.db.reviews
+    reviews.insert_one({"name": request.form.get('username'),
+        "game_name": request.form.get('game-name'),
+        "dev_name": request.form.get('dev-name'),
+        "genre": request.form.get('genre'),
+        "image": request.form.get('image'),
+        "gameplay": request.form.get('gameplay'),
+        "story": request.form.get('story'),
+        "production-quality": request.form.get('production-quality'),
+        "price": request.form.get('price'),
+        "platform": request.form.get('platform'),
+        "body": request.form.get('body')
+    })
+    return render_template("write-review.html")
 
 @app.route('/contact')
 def contact():
@@ -72,7 +89,13 @@ def contact():
     
 @app.route('/my_reviews')
 def my_reviews():
+    if 'username' not in session:
+        return render_template('must-login.html')
     return render_template('my-reviews.html', reviews=mongo.db.reviews.find())
+    
+@app.route('/must_login')
+def must_login():
+    return render_template('must-login.html')
 
 if __name__ == '__main__':
     app.secret_key = 'mysecret'

@@ -964,3 +964,23 @@ span.psw {
         width: 90%;
     }
 }
+
+.login-error-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.sad-face {
+    width: 400px;
+    height: 400px;
+}
+
+.sadface-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}

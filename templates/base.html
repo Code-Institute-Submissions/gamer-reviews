@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    {% block scripts %}{% endblock %}
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+    {% block scripts %}{% endblock %}
     <title>GamerReview</title>
 </head>
 
@@ -66,11 +66,7 @@
                 </nav>
             </div>
             <div class="col-6 container social-area">
-                <a><i class="fa fa-youtube fa-lg social-links"></i></a>
-                <a><i class="fa fa-twitch fa-lg social-links"></i></a>
-                <a><i class="fa fa-facebook fa-lg social-links"></i></a>
-                <a><i class="fa fa-twitter fa-lg social-links"></i></a>
-                <a><i class="fa fa-instagram fa-lg social-links"></i></a>
+                <p class="social-links">logged in as {{ session['username']}}</p>
             </div>
         </div>
     </header>
