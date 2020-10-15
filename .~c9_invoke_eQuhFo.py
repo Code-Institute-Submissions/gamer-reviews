@@ -1,7 +1,7 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, session
-from flask_pymongo import PyMongo
-from flask_paginate import Pagination
+from flask import Flask, render_template, redirect, request, url_for, session, current_app
+from flask_pymongo import PyMongo, MongoClient
+from flask_paginate import Pagination, get_page_parameter, get_page_args
 import bcrypt
 from bson.objectid import ObjectId
 
@@ -57,20 +57,9 @@ def articles():
 def single_article():
     return render_template("single-article.html")
     
-@app.route('/reviews', methods=['GET'])
+@app.route('/reviews')
 def reviews():
-    post = getattr(reviews, "read_review")
-    print(post)
-    
-    page = int(request.args.get('page', 1))
-    per_page = 5
-    offset = (page - 1) * per_page
-    
-    allreviews = mongo.db.reviews.find()
-    reviews_for_render = allreviews.limit(per_page).skip(offset)
-        
-    pagination = Pagination(page = page, per_page = per_page, offset = offset, total = allreviews.count(), css_framework = 'bootstrap4')
-    return render_template('reviews.html', reviews = reviews_for_render, pagination = pagination)
+    return render_template('reviews.html', reviews = reviews, page = page, per_page = per_page, pagination = pagination)
     
 @app.route('/single_review')
 def single_review():
@@ -103,18 +92,7 @@ def contact():
 def my_reviews():
     if 'username' not in session:
         return render_template('must-login.html')
-    
-    username = session['username']
-    page = int(request.args.get('page', 1))
-    per_page = 5
-    offset = (page - 1) * per_page
-    
-    myreviews = mongo.db.reviews.find({'name': username})
-    reviews_for_render = myreviews.limit(per_page).skip(offset)
-    
-    pagination = Pagination(page = page, per_page = per_page, offset = offset, total = myreviews.count(), css_framework = 'bootstrap4')
-    
-    return render_template('my-reviews.html', reviews = reviews_for_render, pagination = pagination)
+    return render_template('my-reviews.html', reviews=mongo.db.reviews.find())
     
 @app.route('/must_login')
 def must_login():

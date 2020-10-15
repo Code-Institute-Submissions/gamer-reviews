@@ -1,13 +1,13 @@
 import os
 from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
-from flask_paginate import Pagination
+from flask_paginate import Pagination, get_page_parameter, get_page_args
 import bcrypt
 from bson.objectid import ObjectId
 
 
 
-app = Flask( __name__)
+app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = 'gamer-reviews'
 app.config["MONGO_URI"] = 'mongodb+srv://joe:Drumgoon6894@gamerreview.85ibj.mongodb.net/gamer-reviews?retryWrites=true&w=majority'
@@ -57,21 +57,50 @@ def articles():
 def single_article():
     return render_template("single-article.html")
     
-@app.route('/reviews', methods=['GET'])
+page, pe_page, offset = get_page_items()
+
+(total, processed_text1) = DBQueries.processQuery(query, offset, per_page)
+pagination = get_pagination(page=page,
+                            per_page=per_page,
+                            total=total,
+                            format_total=True,
+                            format_number=True,
+                            record_name='reviews'
+                            )
+    
+@app.route('/reviews')
 def reviews():
-    post = getattr(reviews, "read_review")
-    print(post)
+    return render_template("reviews.html", 
+                            page=page,
+                            total=total,
+                            per_page=pe_page,
+                            pagination=pagination,
+                            reviews=mongo.db.reviews.find()
+                            )
+
+def get_css_framework():
+    return 'bootstrap4'
     
-    page = int(request.args.get('page', 1))
-    per_page = 5
-    offset = (page - 1) * per_page
+def get_link_size():
+    return 'sm'
     
-    allreviews = mongo.db.reviews.find()
-    reviews_for_render = allreviews.limit(per_page).skip(offset)
-        
-    pagination = Pagination(page = page, per_page = per_page, offset = offset, total = allreviews.count(), css_framework = 'bootstrap4')
-    return render_template('reviews.html', reviews = reviews_for_render, pagination = pagination)
+def show_single_page_or_not():
+    return False
     
+def get_page_items():
+    page= int(request.args.get('page', 1))
+    per_page=request.args.get('per_page')
+    if not per_page:
+        per_page = PER_PAGE
+    else:
+        per_page=int(per_page)
+    offset=(page-1)*per_page
+    return page, per_page, offset
+    
+def get_pagination(**kwargs):
+    kwargs.setdefault('record_name', 'reviews')
+    return Pagination(css_framework=get_css_framework())
+
 @app.route('/single_review')
 def single_review():
     return render_template("single-review.html", reviews=mongo.db.reviews.find())
@@ -103,18 +132,7 @@ def contact():
 def my_reviews():
     if 'username' not in session:
         return render_template('must-login.html')
-    
-    username = session['username']
-    page = int(request.args.get('page', 1))
-    per_page = 5
-    offset = (page - 1) * per_page
-    
-    myreviews = mongo.db.reviews.find({'name': username})
-    reviews_for_render = myreviews.limit(per_page).skip(offset)
-    
-    pagination = Pagination(page = page, per_page = per_page, offset = offset, total = myreviews.count(), css_framework = 'bootstrap4')
-    
-    return render_template('my-reviews.html', reviews = reviews_for_render, pagination = pagination)
+    return render_template('my-reviews.html', reviews=mongo.db.reviews.find())
     
 @app.route('/must_login')
 def must_login():
