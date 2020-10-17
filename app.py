@@ -5,7 +5,6 @@ from bson.objectid import ObjectId
 from flask_paginate import Pagination
 import bcrypt
 
-
 app = Flask( __name__)
 
 app.config["MONGO_DBNAME"] = 'gamer-reviews'
@@ -47,6 +46,12 @@ def register():
         return 'that username already exists!'
         
     return render_template('register.html')
+    
+@app.route("/logout")
+def logout():
+    if 'username' in session:
+        session.pop('username')
+    return render_template('index.html')
     
 @app.route('/articles')
 def articles():
