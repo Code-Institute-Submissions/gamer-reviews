@@ -273,12 +273,8 @@ span.psw {
     color: #fafafa;
 }
 
-.slide-text {
-    margin-top: 20px;
-}
-
-.meta-data {
-    margin-top: 10px;
+.carousel-data {
+    margin-bottom: 0px;
 }
 
 .opaque-background {
@@ -289,7 +285,7 @@ span.psw {
 .opaque-background::before {
     position: absolute;
     width: 100%;
-    height: 682px;
+    height: 687px;
     left: -1110px;
     content: '';
     background-color: rgba(14, 14, 14, 0.8);
@@ -301,7 +297,7 @@ span.psw {
 .opaque-background::after {
     position: absolute;
     width: 100%;
-    height: 682px;
+    height: 687px;
     left: 1110px;
     content: '';
     background-color: rgba(14, 14, 14, 0.8);
@@ -344,8 +340,14 @@ span.psw {
 
 .read-article-btn {
     margin-left: 20px;
-    margin-bottom: 20px;
     background-color: #20d8da;
+}
+
+.delete-btn,
+.edit-btn {
+    background-color: #20d8da;
+    float: right;
+    margin-right: 5px;
 }
 
 @media only screen and (max-width: 1036px) {
@@ -539,6 +541,22 @@ span.psw {
     margin-left: 20px;
 }
 
+.article-img-modal {
+    width: 100%;
+}
+
+.modal-header {
+    text-align: center;
+}
+
+.modal-article-area {
+    padding: 10px;
+}
+
+.full-article-url {
+    padding: 10px;
+}
+
 @media only screen and (max-width: 830px) {
     .filter {
         width: 150px;
@@ -590,86 +608,6 @@ span.psw {
     }
 }
 
-.single-article-area {
-    margin-top: 100px;
-}
-
-.single-article-img {
-    width: 70%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 500px;
-}
-
-.single-article-heading {
-    width: 70%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin: auto;
-    padding-top: 100px;
-}
-
-.genre,
-.date {
-    width: 70%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin: auto;
-}
-
-.single-article-content {
-    width: 70%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-}
-
-@media only screen and (max-width: 792px) {
-    .single-article-img {
-        width: 90%;
-        margin: auto;
-    }
-
-    .single-article-heading {
-        width: 90%;
-        margin: auto;
-    }
-
-    .genre,
-    .date {
-        width: 90%;
-        margin: auto;
-    }
-
-    .single-article-content {
-        width: 90%;
-        margin: auto;
-    }
-}
-
-.star-btn {
-    float: right;
-    border: none;
-    background-color: white;
-}
-
-.star-fill-btn {
-    background-color: #fafafa;
-    color: blue;
-}
-
-.star-empty-btn {
-    background-color: #fafafa;
-    color: lightgrey;
-}
-
 .reviews-hero-heading {
     color: #fafafa;
     font-size: 100px;
@@ -711,6 +649,36 @@ span.psw {
 .review-img {
     width: 100%;
     height: 300px;
+}
+
+.rating-heading {
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+
+.modal-header {
+    text-align: center;
+}
+
+.close-modal-btn-area {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.close-modal-btn {
+    background-color: #20d8da;
+}
+
+.modal-btns-area {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.modal-btns {
+    background-color: #20d8da;
+    margin: 5px;
 }
 
 @media only screen and (max-width: 1331px) {
@@ -771,87 +739,18 @@ span.psw {
     }
 }
 
-
-
 @media only screen and (max-width: 600px) {
     .review-content {
         height: 118px;
     }
 }
 
-.single-review-img {
-    width: 100%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 500px;
-}
-
-.single-review-img-area {
-    padding-top: 100px;
-}
-
-.single-review-heading {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin: auto;
-    padding-top: 100px;
-    padding-bottom: 30px;
-}
-
-.genre-review,
-.date-review {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin: auto;
-}
-
-.single-review-content {
-    padding-top: 30px;
-}
-
-.fa-twitch {
-    padding-left: 10px;
-}
-
-.buy-game-btn {
-    background-color: #20d8da;
-    border: none;
-    margin-bottom: 50px;
-}
-
-.twitch-btn {
-    background-color: #20d8da;
-    border: none;
-    margin-bottom: 50px;
-}
-
 .author {
     float: right;
 }
 
-.bar-ratings {
-    margin-top: 250px;
-}
-
 .progress {
-    margin: 20px;
-}
-
-.rating-border {
-    border-bottom: solid 1px lightgrey;
-    margin: 40px;
-}
-
-@media only screen and (max-width: 992px) {
-    .bar-ratings {
-        margin-top: 0;
-        margin-bottom: 30px;
-    }
+    margin: 10px;
 }
 
 .write-a-review {
@@ -886,6 +785,14 @@ span.psw {
 .submit-btn {
     background-color: #20d8da;
     border: none;
+}
+
+.rating {
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 0px;
 }
 
 @media only screen and (max-width: 768px) {

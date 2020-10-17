@@ -2,7 +2,7 @@
 <section>
     <div class="row container-fluid hero-image-area">
         <div class="col-12 hero-image">
-            <img src="static/images/black-ops-bg.jpg" class="hero-image">
+            <img src="{{url_for('static', filename='images/black-ops-bg.jpg')}}" class="hero-image">
             <div class="black-overlay">
                 <div>
                     <div class="reviews-hero-heading">
@@ -50,12 +50,87 @@
             <div>
                 <p class="review-content">{{reviews.body}}</p>
                 <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:{{reviews.total}}%">
                         <span class="sr-only"> 90% complete</span>
                     </div>
-                    <span class="progress-type">Total 4.5</span>
+                    <span class="progress-type">Total: {{reviews.total}}/100</span>
                 </div>
-                <a href="#"><button class="btn-success btn read-article-btn" value="{{reviews._id}}">Read Review</button></a>
+                <div class="row">
+                    <div class="col-12">
+                        <button class="btn-success btn read-article-btn" data-toggle="modal" data-target="#modal{{reviews._id}}">Read Review</button>
+                        <a href="{{url_for('delete_reviews', review_id=reviews._id)}}" class="btn btn-success delete-btn" name="delete"><i class="fa fa-trash"></i></a>
+                        <a href="{{url_for('edit_reviews', review_id=reviews._id)}}" class="btn btn-success edit-btn"><i class="fa fa-edit"></i></a>
+                    </div>
+                </div>
+                <div class="modal fade" id="modal{{reviews._id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header row">
+                                <div class="col-12">
+                                    <h3 class="modal-title" id="exampleModalLabel"><strong>{{reviews.game_name}}</strong></h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="{{reviews.image}}" class="review-img">
+                                </div>
+                                <div class="col-6">
+                                    <p class="rating-heading"><strong>Gamplay:</strong></p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:{{reviews.gameplay}}%">
+                                            <span class="sr-only"> 90% complete</span>
+                                        </div>
+                                        <span class="progress-type">Gameplay: {{reviews.gameplay}}/100</span>
+                                    </div>
+                                    <p class="rating-heading"><strong>Story:</strong></p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:{{reviews.story}}%">
+                                            <span class="sr-only"> 90% complete</span>
+                                        </div>
+                                        <span class="progress-type">Story: {{reviews.story}}/100</span>
+                                    </div>
+                                    <p class="rating-heading"><strong>Production Quality:</strong></p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:{{reviews.production_quality}}%">
+                                            <span class="sr-only"> 90% complete</span>
+                                        </div>
+                                        <span class="progress-type">Production Quality: {{reviews.production_quality}}/100</span>
+                                    </div>
+                                    <p class="rating-heading"><strong>Price:</strong></p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:{{reviews.price}}%">
+                                            <span class="sr-only"> 90% complete</span>
+                                        </div>
+                                        <span class="progress-type">Price: {{reviews.price}}/100</span>
+                                    </div>
+                                    <p class="rating-heading"><strong>Total:</strong></p>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:{{reviews.total}}%">
+                                            <span class="sr-only"> 90% complete</span>
+                                        </div>
+                                        <span class="progress-type">Total: {{reviews.total}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-body">
+                                <p><strong>Developer:</strong> {{reviews.dev_name}}</p>
+                                <p><strong>Genre: </strong>{{reviews.genre}}</p>
+                                <p><strong>Platform:</strong> {{reviews.platform}}</p>
+                                <p>{{reviews.body}}</p>
+                                <p><strong>Author: </strong>{{reviews.name}}</p>
+                            </div>
+                            <div class="modal-footer row container">
+                                <div class="col-6 modal-btns-area">
+                                    <a href="https://www.gamestop.ie/Home/Index" target="_blank"><button type="button" class="btn btn-success modal-btns">Buy</button></a>
+                                    <a href="https://www.twitch.tv/" target="_blank"><button type="button" class="btn btn-success modal-btns">Watch on  <i class="fa fa-twitch"></i></button></a>
+                                </div>
+                                <div class="col-6 close-modal-btn-area container">
+                                    <button type="button" class="btn btn-success close-modal-btn" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -1,10 +1,9 @@
 import os
 from flask import Flask, render_template, redirect, request, url_for, session
 from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 from flask_paginate import Pagination
 import bcrypt
-from bson.objectid import ObjectId
-
 
 
 app = Flask( __name__)
@@ -59,9 +58,6 @@ def single_article():
     
 @app.route('/reviews', methods=['GET'])
 def reviews():
-    post = getattr(reviews, "read_review")
-    print(post)
-    
     page = int(request.args.get('page', 1))
     per_page = 5
     offset = (page - 1) * per_page
@@ -74,7 +70,7 @@ def reviews():
     
 @app.route('/single_review')
 def single_review():
-    return render_template("single-review.html", reviews=mongo.db.reviews.find())
+    return render_template("single-review.html", reviews = mongo.db.reviews.find())
     
 @app.route('/write_review', methods=["POST", "GET"])
 def write_review():
@@ -88,8 +84,9 @@ def write_review():
         "image": request.form.get('image'),
         "gameplay": request.form.get('gameplay'),
         "story": request.form.get('story'),
-        "production-quality": request.form.get('production-quality'),
+        "production_quality": request.form.get('production-quality'),
         "price": request.form.get('price'),
+        "total": request.form.get('total'),
         "platform": request.form.get('platform'),
         "body": request.form.get('body')
     })
@@ -97,7 +94,7 @@ def write_review():
 
 @app.route('/contact')
 def contact():
-    return render_template('contact.html', reviews=mongo.db.reviews.find())
+    return render_template('contact.html')
     
 @app.route('/my_reviews')
 def my_reviews():
@@ -115,6 +112,54 @@ def my_reviews():
     pagination = Pagination(page = page, per_page = per_page, offset = offset, total = myreviews.count(), css_framework = 'bootstrap4')
     
     return render_template('my-reviews.html', reviews = reviews_for_render, pagination = pagination)
+    
+@app.route('/edit_reviews/<review_id>')
+def edit_reviews(review_id):
+    the_review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+    return render_template('edit-reviews.html', review = the_review)
+    
+@app.route('/update_review/<review_id>', methods=["POST"])
+def update_review(review_id):
+    reviews = mongo.db.reviews
+    reviews.update({'_id': ObjectId(review_id)},
+    {   "name": request.form.get('username'),
+        "game_name": request.form.get('game-name'),
+        "dev_name": request.form.get('dev-name'),
+        "genre": request.form.get('genre'),
+        "image": request.form.get('image'),
+        "gameplay": request.form.get('gameplay'),
+        "story": request.form.get('story'),
+        "production_quality": request.form.get('production-quality'),
+        "price": request.form.get('price'),
+        "total": request.form.get('total'),
+        "platform": request.form.get('platform'),
+        "body": request.form.get('body')
+    })
+    username = session['username']
+    page = int(request.args.get('page', 1))
+    per_page = 5
+    offset = (page - 1) * per_page
+    
+    myreviews = mongo.db.reviews.find({'name': username})
+    reviews_for_render = myreviews.limit(per_page).skip(offset)
+    
+    pagination = Pagination(page = page, per_page = per_page, offset = offset, total = myreviews.count(), css_framework = 'bootstrap4')
+    return render_template('my-reviews.html', reviews = reviews_for_render, pagination=pagination)
+    
+@app.route('/delete_reviews/<review_id>')
+def delete_reviews(review_id):
+    mongo.db.reviews.remove({'_id': ObjectId(review_id)})
+    
+    username = session['username']
+    page = int(request.args.get('page', 1))
+    per_page = 5
+    offset = (page - 1) * per_page
+    
+    myreviews = mongo.db.reviews.find({'name': username})
+    reviews_for_render = myreviews.limit(per_page).skip(offset)
+    
+    pagination = Pagination(page = page, per_page = per_page, offset = offset, total = myreviews.count(), css_framework = 'bootstrap4')
+    return render_template('my-reviews.html', reviews = reviews_for_render, pagination=pagination)
     
 @app.route('/must_login')
 def must_login():

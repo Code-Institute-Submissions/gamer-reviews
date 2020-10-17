@@ -63,8 +63,37 @@ function injectPage() {
                 <p class="article-content">${i.deck}</p>
             </div>
             <div>
-                <button class="btn btn-success read-article-btn">Read Article</button>
+                <button class="btn btn-success read-article-btn" data-toggle="modal" data-target="#modal${i.id}">Read Article</button>
             </div>
+        </div>
+        <div class="modal fade" id="modal${i.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>${i.title}</h4>
+                </div>
+                <div class="modal-body row">
+                    <div class="col-12">
+                        <img src="${i.image.original}" class="article-img-modal">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 modal-article-area">
+                        <p><strong>Publish Date: </strong>${i.publish_date}</p>
+                        <article>${i.deck}</article>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 full-article-url">
+                        <p><strong>View Full Article:</strong></p>
+                        <a href="${i.site_detail_url}" target="_blank"><p>${i.site_detail_url}</p></a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success close-modal-btn" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+          </div>
         </div>`;
     }).join('');
 }
