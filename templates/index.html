@@ -69,19 +69,19 @@
     <div class="row">
         <div class="col-lg-3 single-read-review">
             <img src="static/images/ps4.jpg" class="read-review-img">
-            <a><button class="read-review-btn btn btn-success">Read Reviews</button></a>
+            <a href="{{ url_for('read_reviews_ps4')}}"><button class="read-review-btn btn btn-success">Read Reviews</button></a>
         </div>
         <div class="col-lg-3 single-read-review single-read-review-border">
             <img src="static/images/steam.jpg" class="read-review-img">
-            <a><button class="read-review-btn btn btn-success">Read Reviews</button></a>
+            <a href="{{ url_for('read_reviews_pc')}}"><button class="read-review-btn btn btn-success">Read Reviews</button></a>
         </div>
         <div class="col-lg-3 single-read-review single-read-review-border">
             <img src="static/images/wii.jpg" class="read-review-img">
-            <a><button class="read-review-btn btn btn-success">Read Reviews</button></a>
+            <a href="{{ url_for('read_reviews_wii') }}"><button class="read-review-btn btn btn-success">Read Reviews</button></a>
         </div>
         <div class="col-lg-3 single-read-review single-read-review-border">
             <img src="static/images/xbox.jpg" class="read-review-img">
-            <a><button class="read-review-btn btn btn-success">Read Reviews</button></a>
+            <a href="{{ url_for('read_reviews_xbox')}}"><button class="read-review-btn btn btn-success">Read Reviews</button></a>
         </div>
     </div>
 </section>

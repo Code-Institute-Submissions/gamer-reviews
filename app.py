@@ -53,6 +53,59 @@ def logout():
         session.pop('username')
     return render_template('index.html')
     
+@app.route('/read_reviews_ps4', methods=["GET"])
+def read_reviews_ps4():
+    reviews = mongo.db.reviews
+    reviews = reviews.find({'platform': 'ps4'})
+    page = int(request.args.get('page', 1))
+    per_page = 5
+    offset = (page - 1) * per_page
+
+    reviews_for_render = reviews.limit(per_page).skip(offset)
+        
+    pagination = Pagination(page = page, per_page = per_page, offset = offset, total = reviews.count(), css_framework = 'bootstrap4')
+    return render_template('reviews.html', reviews = reviews_for_render, pagination = pagination)
+    
+@app.route('/read_reviews_pc', methods=["GET"])
+def read_reviews_pc():
+    reviews = mongo.db.reviews
+    reviews = reviews.find({'platform': 'pc'})
+    print(reviews)
+    page = int(request.args.get('page', 1))
+    per_page = 5
+    offset = (page - 1) * per_page
+
+    reviews_for_render = reviews.limit(per_page).skip(offset)
+        
+    pagination = Pagination(page = page, per_page = per_page, offset = offset, total = reviews.count(), css_framework = 'bootstrap4')
+    return render_template('reviews.html', reviews = reviews_for_render, pagination = pagination)
+
+@app.route('/read_reviews_xbox', methods=["GET"])
+def read_reviews_xbox():
+    reviews = mongo.db.reviews
+    reviews = reviews.find({'platform': 'xbox'})
+    page = int(request.args.get('page', 1))
+    per_page = 5
+    offset = (page - 1) * per_page
+
+    reviews_for_render = reviews.limit(per_page).skip(offset)
+        
+    pagination = Pagination(page = page, per_page = per_page, offset = offset, total = reviews.count(), css_framework = 'bootstrap4')
+    return render_template('reviews.html', reviews = reviews_for_render, pagination = pagination)
+    
+@app.route('/read_reviews_wii', methods=["GET"])
+def read_reviews_wii():
+    reviews = mongo.db.reviews
+    reviews = reviews.find({'platform': 'wii u'})
+    page = int(request.args.get('page', 1))
+    per_page = 5
+    offset = (page - 1) * per_page
+
+    reviews_for_render = reviews.limit(per_page).skip(offset)
+        
+    pagination = Pagination(page = page, per_page = per_page, offset = offset, total = reviews.count(), css_framework = 'bootstrap4')
+    return render_template('reviews.html', reviews = reviews_for_render, pagination = pagination)
+
 @app.route('/articles')
 def articles():
     return render_template("articles.html")
@@ -77,8 +130,12 @@ def reviews():
 def single_review():
     return render_template("single-review.html", reviews = mongo.db.reviews.find())
     
-@app.route('/write_review', methods=["POST", "GET"])
+@app.route('/write_review')
 def write_review():
+    return render_template("write-review.html")
+
+@app.route('/post_review', methods=["POST", "GET"])
+def post_review():
     if 'username' not in session:
         return render_template('must-login.html')
     reviews = mongo.db.reviews
@@ -95,13 +152,13 @@ def write_review():
         "platform": request.form.get('platform'),
         "body": request.form.get('body')
     })
-    return render_template("write-review.html")
+    return redirect(url_for('my_reviews'))
 
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
     
-@app.route('/my_reviews')
+@app.route('/my_reviews', methods=["post", "GET"])
 def my_reviews():
     if 'username' not in session:
         return render_template('must-login.html')

@@ -19,7 +19,7 @@
     </div>
 </section>
 <section class="write-a-review">
-    <form method="post" action="{{ url_for('write_review') }}">
+    <form method="post" action="{{ url_for('post_review') }}">
         <div class="row">
             <div class="col-md-6 review-form">
                 <input class="form-control" type="text" name="username" value="{{ session['username']}}" required/>
