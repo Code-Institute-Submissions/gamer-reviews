@@ -7,8 +7,6 @@ import bcrypt
 
 app = Flask( __name__)
 
-mongo_uri = os.environ.get('DB_PASS')
-print(mongo_uri)
 # reviews database name
 app.config["MONGO_DBNAME"] = 'gamer-reviews'
 # uri for database
