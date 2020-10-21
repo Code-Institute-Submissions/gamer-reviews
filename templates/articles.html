@@ -1,6 +1,8 @@
 {% extends 'base.html' %} {% block scripts %}
+<!-- Script to load get-articles-news.js -->
 <script type="text/javascript" src="static/js/get-articles-news.js"></script>
 {% endblock %} {% block content %}
+<!-- hero image area with heading -->
 <section>
     <div class="row container-fluid hero-image-area">
         <div class="col-12 hero-image">
@@ -15,15 +17,18 @@
         </div>
     </div>
 </section>
+<!-- articles area -->
 <section class="reviews">
     <div class="row">
         <div class="col-12">
             <h3 class="reviews-heading">Latest Articles</h3>
         </div>
     </div>
+    <!-- area where articles are displayed -->
     <div class="row articles-area" id="articles">
 
     </div>
+    <!-- pagination links -->
     <nav aria-label="Page Navigation">
         <ul class="pagination" id="paging"></ul>
     </nav>

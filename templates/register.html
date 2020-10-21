@@ -1,4 +1,5 @@
 {% extends 'base.html' %} {% block content %}
+<!-- register.html hero image area -->
 <section>
     <div class="row container-fluid hero-image-area">
         <div class="col-12 hero-image">
@@ -13,10 +14,12 @@
         </div>
     </div>
 </section>
+<!-- register form -->
 <section class="login-section">
     <div class="form-register">
         <form method="post" action="{{ url_for('register') }}">
             <div class="container">
+                <h5>{{ error_message }}</h5>
                 <label for="uname"><b>Username</b></label>
                 <input type="text" placeholder="Enter Username" name="username" class="login-input" required>
 

@@ -1,4 +1,5 @@
 {% extends 'base.html' %} {% block content %}
+<!-- reviews.html hero image area -->
 <section>
     <div class="row container-fluid hero-image-area">
         <div class="col-12 hero-image">
@@ -13,32 +14,14 @@
         </div>
     </div>
 </section>
+<!-- section that displays reviews -->
 <section class="reviews">
-    <div class="row filter-search-area">
-        <div class="col-6 filter-area">
-            <select name="select-filter" class="filter">
-                <option value="" class="filter-option" disabled selected>Filter By Genre</option>
-                <option value="Action" class="filter-option">Action</option>
-                <option value="Action-Adventure" class="filter-option">Action-Adventure</option>
-                <option value="Adventure" class="filter-option">Adventure</option>
-                <option value="Role-Playing" class="filter-option">Role-Playing</option>
-                <option value="Simulation" class="filter-option">Simulation</option>
-                <option value="Strategy" class="filter-option">Strategy</option>
-                <option value="sports" class="filter-option">Sports</option>
-            </select>
-        </div>
-        <div class="col-6 search-area">
-            <form>
-                <input type="search" name="review-search" id="review-search" class="search" placeholder="search"></input>
-                <button type="submit" class="btn btn-success search-btn"><i class="fa fa-search"></i></button>
-            </form>
-        </div>
-    </div>
     <div class="row">
         <div class="col-12">
             <h3 class="reviews-heading">Latest Reviews</h3>
         </div>
     </div>
+    <!-- jinja for loop that displays reviews -->
     {% for reviews in reviews %}
     <div class="row review-area container">
         <div class="col-4">
@@ -46,18 +29,21 @@
         </div>
         <div class="col-8">
             <h4 class="review-heading">{{reviews.game_name}}</h4>
-            <p class="review-heading">{{reviews.genre}}</p>
+            <p class="review-heading"><strong>{{reviews.genre}}</strong></p>
             <div>
                 <p class="review-content">{{reviews.body}}</p>
+                <!-- progress bar that displays total score -->
                 <div class="progress">
                     <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:{{reviews.total}}%">
                         <span class="sr-only"> 90% complete</span>
                     </div>
                     <span class="progress-type">Total: {{reviews.total}}/100</span>
                 </div>
+                <!-- button that triggers review modal -->
                 <button class="btn-success btn read-article-btn" data-toggle="modal" data-target="#modal{{reviews._id}}">Read Review</button>
             </div>
         </div>
+        <!-- review modal -->
         <div class="modal fade" id="modal{{reviews._id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -67,9 +53,11 @@
                         </div>
                     </div>
                     <div class="row">
+                        <!-- review image area -->
                         <div class="col-6">
                             <img src="{{reviews.image}}" class="review-img">
                         </div>
+                        <!-- progress bars that display all different scores -->
                         <div class="col-6">
                             <p class="rating-heading"><strong>Gamplay:</strong></p>
                             <div class="progress">
@@ -108,6 +96,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- section that contains main review data -->
                     <div class="modal-body">
                         <p><strong>Developer:</strong> {{reviews.dev_name}}</p>
                         <p><strong>Genre: </strong>{{reviews.genre}}</p>
@@ -117,10 +106,13 @@
                     </div>
                     <div class="modal-footer row container">
                         <div class="col-6 modal-btns-area">
+                            <!-- button that takes user to gamestop to buy game -->
                             <a href="https://www.gamestop.ie/Home/Index" target="_blank"><button type="button" class="btn btn-success modal-btns">Buy</button></a>
+                            <!-- button that takes user to twitch to watch game -->
                             <a href="https://www.twitch.tv/" target="_blank"><button type="button" class="btn btn-success modal-btns">Watch on  <i class="fa fa-twitch"></i></button></a>
                         </div>
                         <div class="col-6 close-modal-btn-area container">
+                            <!-- button that closes modal -->
                             <button type="button" class="btn btn-success close-modal-btn" data-dismiss="modal">Close</button>
                         </div>
                     </div>

@@ -19,10 +19,12 @@ li {
     list-style: none !important;
 }
 
-.header {
-    width: 60%;
-    margin: auto;
+.btn-success:hover {
+    background-color: #20d8da;
+    opacity: 0.6;
 }
+
+/*-------------------- base.html styles ------------------------------*/
 
 .logo {
     color: black;
@@ -30,6 +32,17 @@ li {
     justify-content: flex-start;
     align-items: flex-start;
     padding: 10px;
+}
+
+.header {
+    width: 60%;
+    margin: auto;
+}
+
+.footer-area {
+    background-color: #000000;
+    color: #fafafa;
+    width: 100%;
 }
 
 .login-area {
@@ -43,51 +56,8 @@ li {
     background-color: #20d8da;
 }
 
-.login-section {
-    margin-top: 100px;
-    margin-bottom: 100px;
-}
-
-.login-input {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-.submit-login-btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-.input-check {
-    display: inline-block;
-}
-
-span.psw {
+.logout {
     float: right;
-}
-
-.form-btns {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-}
-
-.form-switch {
-    background-color: #20d8da;
-    border: none;
-}
-
-.submit-login-btn {
     background-color: #20d8da;
 }
 
@@ -98,93 +68,69 @@ span.psw {
     align-items: center;
 }
 
-.social-links {
-    padding: 5px;
-}
-
 .navigation-area {
     padding: 0;
 }
 
-.carousel-item {
-    position: relative !important;
+.navbar {
+    padding: 0;
 }
 
-.black-overlay {
-    margin: 0;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5);
+.footer-inner {
+    width: 70%;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
+
+.about-footer-area {
+    padding-left: 20px;
+}
+
+.social-footer-area {
+    padding-left: 20px;
+}
+
+.usefull-links-area {
+    padding-left: 20px;
+}
+
+.about-footer-heading {
+    padding-bottom: 50px;
+}
+
+.social-footer-heading {
+    padding-bottom: 50px;
+}
+
+.usefull-links-heading {
+    margin: 0;
+    padding-bottom: 50px;
+}
+
+.social-footer-content {
+    padding: 0;
+    margin: 0;
+}
+
+.usefull-links-content {
+    padding: 0;
+    margin: 0;
+}
+
+
+.footer-list {
+    padding-bottom: 10px;
+}
+
+.a-footer {
+    color: #fafafa;
+}
+
+/*---------------------------- index.html styles ----------------------------*/
 
 .about-slides {
     height: auto;
-}
-
-.about {
-    margin-top: 300px;
-    margin-left: 200px;
-    border-left: solid 2px #20d8da;
-    color: #fafafa;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    width: 40%;
-}
-
-@media only screen and (max-width: 600px) {
-    .login-btn {
-        display: none;
-    }
-
-    .login-area {
-        padding: 10px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        margin: auto;
-    }
-
-    .header {
-        width: 100%;
-        margin: auto;
-    }
-
-    .logo {
-        color: black;
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
-
-    .about-slides {
-        height: auto;
-    }
-
-    .login-btn-small {
-        background-color: #20d8da;
-    }
-
-}
-
-@media only screen and (min-width: 600px) {
-    .login-btn-small {
-        display: none;
-    }
-}
-
-@media only screen and (min-width: 1400px) {
-    .about-slides {
-        height: 794px;
-    }
-}
-
-@media only screen and (max-width: 1080px) {
-    .about {
-        display: none;
-    }
 }
 
 .single-read-review-border {
@@ -212,20 +158,14 @@ span.psw {
     margin-bottom: 20px;
 }
 
-@media only screen and (max-width: 992px) {
-    .single-read-review {
-        width: 400px;
-        margin: auto;
-        padding-top: 20px;
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .single-read-review-border {
-        border: none;
-    }
-
-
+.about {
+    margin-top: 300px;
+    margin-left: 200px;
+    border-left: solid 2px #20d8da;
+    color: #fafafa;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 40%;
 }
 
 .monthly-picks {
@@ -245,20 +185,11 @@ span.psw {
 .this-months-picks-heading {
     padding-top: 100px;
     z-index: 7000;
-}
-
-.monthly-picks-btn {
-    margin-top: 50px;
-    background-color: #20d8da;
+    border-bottom: solid 1px #7d7a7c;
 }
 
 .owl-carousel {
     margin-top: 50px;
-}
-
-.monthly-picks-btn-area {
-    border-bottom: solid 1px #7d7a7c;
-    padding: 0;
 }
 
 .months-pick-heading-area {
@@ -292,7 +223,6 @@ span.psw {
     z-index: 6000;
     overflow: hidden;
 }
-
 
 .opaque-background::after {
     position: absolute;
@@ -332,215 +262,6 @@ span.psw {
     margin-bottom: 40px;
 }
 
-.article-content {
-    padding-left: 20px;
-    overflow: hidden;
-    height: auto;
-}
-
-.read-article-btn {
-    margin-left: 20px;
-    background-color: #20d8da;
-}
-
-.delete-btn,
-.edit-btn {
-    background-color: #20d8da;
-    float: right;
-    margin-right: 5px;
-}
-
-@media only screen and (max-width: 1036px) {
-    .articles-home {
-        width: 90%;
-    }
-}
-
-@media only screen and (max-width: 992px) {
-    .articles-home {
-        width: 90%;
-    }
-}
-
-@media only screen and (max-width: 1327px) {
-    .articles-home {
-        width: 80%;
-    }
-}
-
-@media only screen and (max-width: 466px) {
-    .articles-home {
-        width: 95%;
-    }
-}
-
-@media only screen and (max-width: 843px) {
-    .article-content {
-        display: none;
-    }
-}
-
-.footer-area {
-    background-color: #000000;
-    color: #fafafa;
-    width: 100%;
-}
-
-.footer-inner {
-    width: 70%;
-    margin: auto;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.about-footer-area {
-    padding-left: 40px;
-}
-
-.reviews-footer-area {
-    padding-left: 40px;
-}
-
-.usefull-links-area {
-    padding-left: 40px;
-}
-
-.about-footer-heading {
-    padding-bottom: 50px;
-}
-
-.reviews-footer-heading {
-    padding-bottom: 50px;
-}
-
-.usefull-links-heading {
-    margin: 0;
-    padding-bottom: 50px;
-}
-
-.reviews-footer-content {
-    padding: 0;
-    margin: 0;
-}
-
-.usefull-links-content {
-    padding: 0;
-    margin: 0;
-}
-
-.footer-list {
-    padding-bottom: 10px;
-}
-
-.a-footer {
-    color: #fafafa;
-}
-
-@media only screen and (max-width: 992px) {
-    .footer-inner {
-        width: 90%;
-        margin: auto;
-    }
-
-    .about-footer-heading {
-        padding-top: 50px;
-    }
-
-    .usefull-links-heading {
-        padding-top: 50px;
-    }
-
-    .reviews-footer-heading {
-        padding-top: 50px;
-    }
-}
-
-.hero-image {
-    width: 100%;
-    padding: 0;
-}
-
-.hero-image-area {
-    padding: 0;
-}
-
-.articles-hero-heading {
-    color: #fafafa;
-    font-size: 100px;
-    margin-top: 300px;
-    margin-left: 200px;
-    border-left: solid 2px #20d8da;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    width: 40%;
-}
-
-@media only screen and (max-width: 1331px) {
-    .articles-hero-heading {
-        font-size: 75px;
-        margin-top: 200px;
-        margin-left: 100px;
-    }
-}
-
-@media only screen and (max-width: 960px) {
-    .articles-hero-heading {
-        font-size: 50px;
-        margin-top: 150px;
-        margin-left: 50px;
-    }
-}
-
-@media only screen and (max-width: 730px) {
-    .articles-hero-heading {
-        font-size: 30px;
-        margin-top: 100px;
-        margin-left: 30px;
-    }
-}
-
-@media only screen and (max-width: 520px) {
-    .articles-hero-heading {
-        font-size: 20px;
-        margin-top: 60px;
-        margin-left: 20px;
-    }
-}
-
-.filter {
-    background-color: #20d8da;
-    border: none;
-    color: #fafafa;
-    width: 200px;
-    height: 40px;
-}
-
-.filter-option {
-    background-color: #fafafa;
-    color: #000000;
-    border: none;
-}
-
-.search-area {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    margin: auto;
-}
-
-.search {
-    border: none;
-    height: 40px;
-    background-color: lightgrey;
-    color: #fafafa;
-}
-
-.search-btn {
-    background-color: #20d8da;
-    height: 40px;
-    margin-left: 20px;
-}
-
 .article-img-modal {
     width: 100%;
 }
@@ -557,56 +278,20 @@ span.psw {
     padding: 10px;
 }
 
-@media only screen and (max-width: 830px) {
-    .filter {
-        width: 150px;
-    }
-
-    .search {
-        width: 150px;
-    }
+.carousel-item {
+    position: relative !important;
 }
 
-@media only screen and (max-width: 740px) {
-    .articles {
-        width: 90%;
-        margin: auto;
-    }
+.read-article-btn {
+    margin-left: 20px;
+    background-color: #20d8da;
 }
 
-@media only screen and (max-width: 500px) {
-    .articles {
-        width: 100%;
-    }
-
-    .search {
-        width: 50%;
-        margin-left: 40px;
-    }
-
-    .filter {
-        width: 50%;
-        margin-left: 10px;
-    }
-
-    .search-btn {
-        margin-left: 10px;
-    }
-
-    .filter-search-area {
-        margin: auto;
-    }
-
-    .search-area {
-        display: inline-block;
-    }
+.close-modal-btn {
+    background-color: #20d8da;
 }
 
-@media only screen and (max-width: 400px) {
-    .search {
-        margin-left: 20px;
-    }
-}
+/*---------------------------- reviews.html styles --------------------------*/
 
 .reviews-hero-heading {
     color: #fafafa;
@@ -656,8 +341,8 @@ span.psw {
     margin-left: 10px;
 }
 
-.modal-header {
-    text-align: center;
+.progress {
+    margin: 10px;
 }
 
 .close-modal-btn-area {
@@ -666,14 +351,14 @@ span.psw {
     align-items: flex-end;
 }
 
-.close-modal-btn {
-    background-color: #20d8da;
-}
-
 .modal-btns-area {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+}
+
+.modal-header {
+    text-align: center;
 }
 
 .modal-btns {
@@ -681,136 +366,39 @@ span.psw {
     margin: 5px;
 }
 
-@media only screen and (max-width: 1331px) {
-    .reviews-hero-heading {
-        font-size: 75px;
-        margin-top: 200px;
-        margin-left: 100px;
-    }
+/*---------------------------- articles.html styles -------------------------*/
+
+.article-content {
+    padding-left: 20px;
+    overflow: hidden;
+    height: auto;
 }
 
-@media only screen and (max-width: 960px) {
-    .reviews-hero-heading {
-        font-size: 50px;
-        margin-top: 150px;
-        margin-left: 50px;
-    }
-}
-
-@media only screen and (max-width: 730px) {
-    .reviews-hero-heading {
-        font-size: 30px;
-        margin-top: 100px;
-        margin-left: 30px;
-    }
-}
-
-@media only screen and (max-width: 520px) {
-    .reviews-hero-heading {
-        font-size: 20px;
-        margin-top: 60px;
-        margin-left: 20px;
-    }
-}
-
-@media only screen and (max-width: 740px) {
-    .reviews {
-        width: 90%;
-        margin: auto;
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    .reviews {
-        width: 100%;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .review-img {
-        height: 220px;
-    }
-}
-
-@media only screen and (max-width: 1390px) {
-    .review-content {
-        height: 248px;
-        overflow: hidden;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .review-content {
-        height: 118px;
-    }
+.articles-hero-heading {
+    color: #fafafa;
+    font-size: 100px;
+    margin-top: 300px;
+    margin-left: 200px;
+    border-left: solid 2px #20d8da;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 40%;
 }
 
 .author {
     float: right;
 }
 
-.progress {
-    margin: 10px;
-}
-
-.write-a-review {
-    width: 70%;
-    margin: auto;
-    margin-top: 100px;
-}
-
-.form-control {
-    margin-left: 0;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    width: 70%;
-}
-
-.form-check {
-    display: inline-block;
-    margin: 10px;
-}
-
-.write-review-text {
-    width: 100%;
-}
-
-.submit-btn-area {
-    margin: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.submit-btn {
-    background-color: #20d8da;
-    border: none;
-}
-
-.rating {
-    margin-bottom: 10px;
-}
-
-.form-group {
-    margin-bottom: 0px;
-}
-
-@media only screen and (max-width: 768px) {
-    .write-a-review {
-        width: 90%;
-        margin: auto;
-        margin-top: 50px;
-    }
-
-    .form-control {
-        width: 100%;
-    }
-}
+/*---------------------------- contact.html styles ------------------------- */
 
 .contact-area {
     width: 70%;
     margin: auto;
     margin-top: 100px;
+}
+
+.about-contact {
+    border-bottom: 1px solid;
 }
 
 .contact-info {
@@ -862,21 +450,44 @@ span.psw {
     margin-bottom: 50px;
 }
 
-@media only screen and (max-width: 992px) {
-    .contact-area {
-        width: 90%;
-    }
+/*---------------------------- login.html styles ----------------------------*/
 
-    .contact-form {
-        width: 90%;
-    }
+span.psw {
+    float: right;
 }
+
+.login-section {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.login-input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.submit-login-btn {
+    background-color: #20d8da;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/*---------------------------- must-login.html styles -----------------------*/
 
 .login-error-title {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 100px;
+    text-align: center;
 }
 
 .sad-face {
@@ -890,4 +501,405 @@ span.psw {
     align-items: center;
     margin-top: 30px;
     margin-bottom: 100px;
+}
+
+/*---------------------------- my-reviews.html styles -----------------------*/
+
+.delete-btn,
+.edit-btn {
+    background-color: #20d8da;
+    float: right;
+    margin-right: 5px;
+}
+
+.read-btn-small {
+    display: none;
+}
+
+.read-my-review-btn {
+    margin-left: 20px;
+    background-color: #20d8da;
+}
+
+/*---------------------------- write-review.html styles  --------------------*/
+
+.write-a-review {
+    width: 70%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.form-control {
+    margin-left: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.form-check {
+    display: inline-block;
+    margin: 5px;
+}
+
+.write-review-text {
+    width: 100%;
+}
+
+.submit-btn-area {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-btn {
+    background-color: #20d8da;
+    border: none;
+}
+
+.rating {
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 0px;
+}
+
+.input-check {
+    display: inline-block;
+}
+
+.form-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+/*---------------------------- Universal styles --------------------*/
+
+.black-overlay {
+    margin: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-image {
+    width: 100%;
+    padding: 0;
+}
+
+.hero-image-area {
+    padding: 0;
+}
+
+/*---------------------------- Media Queries --------------------*/
+
+@media only screen and (max-width: 410px) {
+    .reviews-hero-heading,
+    .articles-hero-heading {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .header {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .login-btn {
+        display: none;
+    }
+
+    .login-area {
+        padding: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .header {
+        width: 100%;
+        margin: auto;
+    }
+
+    .logo {
+        color: black;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .about-slides {
+        height: auto;
+    }
+
+    .login-btn-small {
+        background-color: #20d8da;
+    }
+
+}
+
+@media only screen and (min-width: 600px) {
+    .login-btn-small {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .about-slides {
+        height: 794px;
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    .about {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .single-read-review {
+        width: 400px;
+        margin: auto;
+        padding-top: 20px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .single-read-review-border {
+        border: none;
+    }
+}
+
+@media only screen and (max-width: 410px) {
+    .monthly-picks-area {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media only screen and (max-width: 1036px) {
+    .articles-home {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .articles-home {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 1327px) {
+    .articles-home {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 466px) {
+    .articles-home {
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 843px) {
+    .article-content {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .footer-inner {
+        width: 90%;
+        margin: auto;
+    }
+
+    .about-footer-heading {
+        padding-top: 50px;
+    }
+
+    .usefull-links-heading {
+        padding-top: 50px;
+    }
+
+    .reviews-footer-heading {
+        padding-top: 50px;
+    }
+}
+
+@media only screen and (max-width: 1331px) {
+    .articles-hero-heading {
+        font-size: 75px;
+        margin-top: 200px;
+        margin-left: 100px;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .articles-hero-heading {
+        font-size: 50px;
+        margin-top: 150px;
+        margin-left: 50px;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .articles-hero-heading {
+        font-size: 30px;
+        margin-top: 100px;
+        margin-left: 30px;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .articles-hero-heading {
+        font-size: 20px;
+        margin-top: 60px;
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    .articles {
+        width: 90%;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .articles {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1331px) {
+    .reviews-hero-heading {
+        font-size: 75px;
+        margin-top: 200px;
+        margin-left: 100px;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .reviews-hero-heading {
+        font-size: 50px;
+        margin-top: 150px;
+        margin-left: 50px;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .reviews-hero-heading {
+        font-size: 30px;
+        margin-top: 100px;
+        margin-left: 30px;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .reviews-hero-heading {
+        font-size: 20px;
+        margin-top: 60px;
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    .reviews {
+        width: 90%;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .reviews {
+        width: 100%;
+        padding-top: 50px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .review-area {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .review-img {
+        height: 220px;
+    }
+}
+
+@media only screen and (max-width: 1390px) {
+    .review-content {
+        height: auto;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .review-content {
+        height: 118px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .read-btn-small {
+        background-color: #20d8da;
+        display: flex;
+    }
+
+    .delete-btn,
+    .edit-btn {
+        margin-right: 0px;
+    }
+
+    .read-my-review-btn {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .write-a-review {
+        width: 90%;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    .form-control {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .contact-area {
+        width: 90%;
+    }
+
+    .contact-form {
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .about-contact {
+        border-bottom: none;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .sad-face {
+        height: 200px;
+        width: 200px;
+    }
 }

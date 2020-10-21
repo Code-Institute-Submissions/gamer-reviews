@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" /> 
     {% block scripts %}{% endblock %}
     <title>GamerReview</title>
 </head>
@@ -20,6 +20,7 @@
     <header class="header">
         <div class="top-header-area">
             <div class="row">
+                <!-- Logo area -->
                 <div class="col-6 container logo-area">
                     <a href="{{url_for('index')}}">
                         <h2 class="logo">GamerReviews</h2>
@@ -27,14 +28,17 @@
                 </div>
                 <div class="col-3 container login-area">
                     <a href="{{url_for('login')}}">
+                        <!-- login area -->
                         <button type="button" class="login-btn btn btn-success">
                             Login/Register<span><button class="login-btn-small btn btn-success"><i class="fa fa-lock"></i></span></button>
                         </button>
                     </a>
-                    <a href="{{url_for('logout')}}"><button type="button" class="btn btn-success login-btn"><i class="fa fa-sign-out-alt">Logout</i></button></a>
+                    <!-- Logout area -->
+                    <a href="{{url_for('logout')}}"><button type="button" class="btn btn-success logout"><i class="fa fa-sign-out"></i></button></a>
                 </div>
             </div>
         </div>
+        <!--          Navigation area          -->
         <div class="row">
             <div class="col-6 navigation-area">
                 <nav class="navbar navbar-expand-md navbar-light">
@@ -66,38 +70,41 @@
                     </div>
                 </nav>
             </div>
+            <!-- Username area -->
             <div class="col-6 container social-area">
-                <p class="social-links">Logged in as {{ session['username']}}</p>
+                <p>Logged in as {{ session['username']}}</p>
             </div>
         </div>
     </header>
     {% block content %} {% endblock %}
+    <!-- Footer area -->
     <footer class="footer-area">
         <div class="row footer-inner">
             <div class="col-lg-4 about-footer-area">
                 <h3 class="about-footer-heading">GamerReviews</h3>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                    GamerReviews is a website designed by gamers for gamers. Our main goal is to keep you up to date on upcoming and new releases and to allow you to read reviews 
+                    on games by fellow gamers so you can make an informed descion before puchasing new games
                 </p>
             </div>
-            <div class="col-lg-4 reviews-footer-area">
-                <h3 class="reviews-footer-heading">Game Reviews</h3>
-                <ul class="reviews-footer-content">
-                    <li class="footer-list"><a class="a-footer" href="#">Grand Theft Auto</a></li>
-                    <li class="footer-list"><a class="a-footer" href="#">Red Dead Redemption</a></li>
-                    <li class="footer-list"><a class="a-footer" href="#">The Last Of Us III</a></li>
-                    <li class="footer-list"><a class="a-footer" href="#">God Of War</a></li>
-                    <li class="footer-list"><a class="a-footer" href="#">Doom</a></li>
+            <div class="col-lg-4 social-footer-area">
+                <h3 class="social-footer-heading">Social Links</h3>
+                <ul class="socail-footer-content">
+                    <li class="footer-list"><a class="a-footer" href="#"><i class="fab fa-youtube fa-2x"></i></a></li>
+                    <li class="footer-list"><a class="a-footer" href="#"><i class="fab fa-twitch fa-2x"></i></a></li>
+                    <li class="footer-list"><a class="a-footer" href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
+                    <li class="footer-list"><a class="a-footer" href="#"><i class="fab fa-facebook fa-2x"></i></a></li>
+                    <li class="footer-list"><a class="a-footer" href="#"><i class="fab fa-instagram fa-2x"></i></a></a></li>
                 </ul>
             </div>
             <div class="col-lg-4 usefull-links-area">
                 <h3 class="usefull-links-heading">UseFull Links</h3>
                 <ul class="usefull-links-content">
-                    <li class="footer-list"><a class="a-footer" href="#">Reviews</a></li>
-                    <li class="footer-list"><a class="a-footer" href="#">News</a></li>
-                    <li class="footer-list"><a class="a-footer" href="#">Contact</a></li>
-                    <li class="footer-list"><a class="a-footer" href="#">Write A Review</a></li>
-                    <li class="footer-list"><a class="a-footer" href="#">My Rewviews</a></li>
+                    <li class="footer-list"><a class="a-footer" href="{{ url_for('reviews') }}">Reviews</a></li>
+                    <li class="footer-list"><a class="a-footer" href="{{ url_for('articles') }}">News</a></li>
+                    <li class="footer-list"><a class="a-footer" href="{{ url_for('contact') }}">Contact</a></li>
+                    <li class="footer-list"><a class="a-footer" href="{{ url_for('write_review') }}">Write A Review</a></li>
+                    <li class="footer-list"><a class="a-footer" href="{{ url_for('my_reviews') }}">My Rewviews</a></li>
                 </ul>
             </div>
         </div>

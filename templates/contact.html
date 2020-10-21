@@ -1,4 +1,14 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% block scripts %}
+<!-- Script to send emails using emailjs -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script src="static/js/sendEmail.js"></script>
+<script type="text/javascript">
+    (function() {
+        emailjs.init("user_xo7QGCq0BDhkiSFWnPcGI");
+    })();
+</script>
+{% endblock %} {% block content %}
+<!-- contact hero image area -->
 <section>
     <div class="row container-fluid hero-image-area">
         <div class="col-12 hero-image">
@@ -13,41 +23,45 @@
         </div>
     </div>
 </section>
+<!-- contact info -->
 <section>
     <div class="row contact-area">
-        <div class="col-lg-7 about-contact">
+        <div class="col-md-7 about-contact">
             <h3>GamerReviews</h3>
             <p>
-                GamerReviews is a website designed by gamers for gamers. Our main goal is to keep you up to date on upcoming and new releases and to allow you to 
-                read reviews on games by fellow gamers so you can make an informed descion before puchasing new games
+                GamerReviews is a website designed by gamers for gamers. Our main goal is to keep you up to date on upcoming and new releases and to allow you to read reviews on games by fellow gamers so you can make an informed descion before puchasing new games
             </p>
         </div>
-        <div class="col-lg-5 container">
+        <div class="col-md-5 container">
             <div class="contact-info">
-                <i class="fa fa-home fa-2x"></i><p>Park Street, Monaghan, Co.Monaghan</p>
+                <i class="fa fa-home fa-2x"></i>
+                <p>Park Street, Monaghan, Co.Monaghan</p>
             </div>
             <div class="contact-info">
-                <i class="fa fa-envelope fa-2x"></i><p>kellyjoseph18@gmail.com</p><br>
+                <i class="fa fa-envelope fa-2x"></i>
+                <p>jk2764168@gmail.com</p><br>
             </div>
             <div class="contact-info">
-                <i class="fa fa-phone fa-2x"></i><p>0871234567</p>
+                <i class="fa fa-phone fa-2x"></i>
+                <p>0871234567</p>
             </div>
         </div>
     </div>
 </section>
+<!-- contact form, when submited email is sent -->
 <section class="contact-form">
-    <form>
+    <form onsubmit="return sendMail(this);">
         <div class="row">
             <div class="col-6">
-                <input class="form-control contact-input-name" placeholder="Name" type="text" name="name"/>
+                <input class="form-control contact-input-name" placeholder="Name" type="text" name="name" />
             </div>
             <div class="col-6">
-                <input class="form-control contact-input-email" placeholder="Email" type="email" name="email"/>
+                <input class="form-control contact-input-email" placeholder="Email" type="email" name="email" />
             </div>
         </div>
         <div class="row">
             <div class="col-12">
-                <input type="text" name="subject" class="form-control contact-input-subject" placeholder="Subject"/>
+                <input type="text" name="subject" class="form-control contact-input-subject" placeholder="Subject" />
             </div>
         </div>
         <div class="row">

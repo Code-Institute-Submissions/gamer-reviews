@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 {% block scripts %}
+<!-- Script to load range.js and checkbox.js, used to process form data -->
 <script type="text/javascript" src="{{url_for('static', filename='js/range.js')}}"></script>
 <script type="text/javascript" src="{{url_for('static', filename='js/checkbox.js')}}"></script>
 {% endblock %}
 {% block content %}
+<!-- Edit revews hero image area -->
 <section>
     <div class="row container-fluid hero-image-area">
         <div class="col-12 hero-image">
@@ -19,6 +21,7 @@
     </div>
 </section>
 <section class="write-a-review">
+    <!-- edit reviews form, with values of review loaded -->
     <form method="post" action="{{ url_for('update_review', review_id=review._id) }}">
         <div class="row">
             <div class="col-md-6 review-form">
@@ -28,6 +31,7 @@
                 <input class="form-control" type="text" name="genre" placeholder="Genre" value="{{review.genre}}" required/>
                 <input class="form-control" type="text" name="image" placeholder="Image URL" value="{{review.image}}" required/>
             </div>
+            <!-- range inputs that determine the value of gameplay, story, production-quality and price, the average of which gives us the total -->
             <div class="col-md-6 write-review-rating" id="test">
                 <div class="form-group">
                     <label for="myRange-1">Rate Gameplay</label> 
@@ -56,6 +60,7 @@
                 </div>
             </div>
         </div>
+        <!-- checkboxes that determine what platform the games are available on -->
         <div class="row">
             <div class="col-12">
                 <h5>Available On:</h5>
@@ -81,12 +86,14 @@
                 </div>
             </div>
         </div>
+        <!-- text area where the user writes the body of the review -->
         <div class="row">
             <div class="col-12">
                 <h5>Write Review</h5>
                 <textarea type="textarea" name="body" placeholder="Write Review" class="form-control write-review-text" rows="5" required>{{review.body}}</textarea>
             </div>
         </div>
+        <!-- submit btn -->
         <div class="row">
             <div class="col-12 container submit-btn-area">
                 <button class="btn btn-success submit-btn" type="submit" >Submit Review</button>
