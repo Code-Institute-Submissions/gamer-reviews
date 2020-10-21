@@ -1,3 +1,4 @@
+dnspython==2.0.0
 bcrypt==3.2.0
 flask-paginate==0.7.1
 Flask-Pymongo==2.3.0
