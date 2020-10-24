@@ -15,11 +15,11 @@
     </div>
 </section>
 <!-- login form -->
-<section class="login-section">
+<section class="login-section container">
     <div class="form-login">
         <form method="post" action="{{ url_for('login') }}">
             <div class="container">
-                <h5>{{ error_message }}</h5>
+                <h3 class="error-message">{{ error_message }}</h3>
                 <label for="uname"><b>Username</b></label>
                 <input type="text" placeholder="Enter Username" name="username" class="login-input" required>
 

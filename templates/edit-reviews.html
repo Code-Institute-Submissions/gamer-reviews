@@ -35,22 +35,22 @@
             <div class="col-md-6 write-review-rating" id="test">
                 <div class="form-group">
                     <label for="myRange-1">Rate Gameplay</label> 
-                    <input type="range" class="form-control-range" name="gameplay" min="1" max="100" value="{{review.gameplay}}" id="myRange-1" oninput="rangeVal(); getTotal();" required>
+                    <input type="range" class="form-control-range" name="gameplay" min="1" max="100" value="{{review.gameplay}}" id="myRange-1" onchange="rangeVal(); getTotal();" required>
                     <p class="rating">Rating: <span id="range-1"></span></p>
                 </div>
                 <div class="form-group">
                     <label for="myRange-2">Rate Story</label>
-                    <input type="range" class="form-control-range" name="story" min="1" max="100" value="{{review.story}}" id="myRange-2" oninput="rangeVal1(); getTotal();" required>
+                    <input type="range" class="form-control-range" name="story" min="1" max="100" value="{{review.story}}" id="myRange-2" onchange="rangeVal1(); getTotal();" required>
                     <p class="rating">Rating: <span id="range-2"></span></p>
                 </div>
                 <div class="form-group">
                     <label for="myRange-3">Rate Production Quality</label>
-                    <input type="range" class="form-control-range" name="production-quality" min="1" max="100" value="{{review.production_quality}}" id="myRange-3" oninput="rangeVal2(); getTotal();" required>
+                    <input type="range" class="form-control-range" name="production-quality" min="1" max="100" value="{{review.production_quality}}" id="myRange-3" onchange="rangeVal2(); getTotal();" required>
                     <p class="rating">Rating: <span id="range-3"></span></p>
                 </div>
                 <div class="form-group">
                     <label for="myRange-4">Rate Price</label>
-                    <input type="range" class="form-control-range" name="price" min="1" max="100" value="{{review.price}}" id="myRange-4" oninput="rangeVal3(); getTotal();" required>
+                    <input type="range" class="form-control-range" name="price" min="1" max="100" value="{{review.price}}" id="myRange-4" onchange="rangeVal3(); getTotal();" required>
                     <p class="rating">Rating: <span id="range-4"></span></p>
                 </div>
                 <div class="form-group">

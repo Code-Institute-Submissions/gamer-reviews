@@ -12,9 +12,14 @@ function sendMail(contactForm) {
             // message that pops up if email was sent 
             alert("Email sent!");
         },
+        // message that pops up if email wasnt sent
         function(error) {
-            // message that pops up if email wasnt sent
             alert("Email failed to send!");
         });
+        resetForm();
         return false;
+}
+
+function resetForm() {
+    document.getElementById('contact-form').reset();
 }

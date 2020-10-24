@@ -24,6 +24,10 @@ li {
     opacity: 0.6;
 }
 
+.btn {
+    background-color: #20d8da;
+}
+
 /*-------------------- base.html styles ------------------------------*/
 
 .logo {
@@ -124,6 +128,7 @@ li {
 }
 
 .a-footer {
+    margin: 10px;
     color: #fafafa;
 }
 
@@ -188,6 +193,11 @@ li {
     border-bottom: solid 1px #7d7a7c;
 }
 
+.owl-next,
+.owl-prev {
+    display: none;
+}
+
 .owl-carousel {
     margin-top: 50px;
 }
@@ -197,7 +207,7 @@ li {
 }
 
 .monthly-pick-image {
-    height: 554px;
+    height: 350px;
 }
 
 .game-title {
@@ -233,10 +243,6 @@ li {
     background-color: rgba(14, 14, 14, 0.8);
     z-index: 6000;
     overflow: hidden;
-}
-
-.owl-nav {
-    display: none;
 }
 
 .articles-home {
@@ -283,6 +289,7 @@ li {
 }
 
 .read-article-btn {
+    margin-bottom: 30px;
     margin-left: 20px;
     background-color: #20d8da;
 }
@@ -308,6 +315,25 @@ li {
     width: 60%;
     margin: auto;
     padding-top: 100px;
+}
+
+.search-area {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: auto;
+}
+
+.search {
+    border: 1px solid lightgrey;
+    height: 40px;
+    color: black;
+}
+
+.search-btn {
+    background-color: #20d8da;
+    height: 40px;
+    margin-left: 20px;
 }
 
 .reviews-heading {
@@ -457,6 +483,10 @@ span.psw {
 }
 
 .login-section {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 100px;
     margin-bottom: 100px;
 }
@@ -478,6 +508,12 @@ span.psw {
     border: none;
     cursor: pointer;
     width: 100%;
+}
+
+.error-message {
+    padding-bottom: 40px;
+    color: red;
+    text-align: center;
 }
 
 /*---------------------------- must-login.html styles -----------------------*/
@@ -606,7 +642,29 @@ span.psw {
     }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1400px) {
+    .reviews-hero-heading {
+        font-size: 75px;
+        margin-top: 200px;
+        margin-left: 75px;
+    }
+}
+
+@media only screen and (max-width: 1025px) {
+    .reviews-hero-heading {
+        font-size: 75px;
+        margin-left: 75px;
+        margin-top: 100px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .social-area {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 770px) {
     .header {
         width: 70%;
     }
@@ -781,18 +839,10 @@ span.psw {
     }
 }
 
-@media only screen and (max-width: 1331px) {
-    .reviews-hero-heading {
-        font-size: 75px;
-        margin-top: 200px;
-        margin-left: 100px;
-    }
-}
-
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 769px) {
     .reviews-hero-heading {
         font-size: 50px;
-        margin-top: 150px;
+        margin-top: 100px;
         margin-left: 50px;
     }
 }
@@ -813,7 +863,13 @@ span.psw {
     }
 }
 
-@media only screen and (max-width: 740px) {
+@media only screen and (max-width: 1024px) {
+    .reviews {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
     .reviews {
         width: 90%;
         margin: auto;

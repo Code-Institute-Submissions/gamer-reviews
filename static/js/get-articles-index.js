@@ -20,10 +20,10 @@ xhr.onload = () => {
     // a loop displays articles on articles.html using template literals and a modal to display articles
     document.getElementById("articles").innerHTML = myArticles.map((i) => {
         return `
-        <div class="col-4">
+        <div class="col-sm-4">
             <img src="${i.image.original}" class="article-img">
         </div>
-        <div class="col-8">
+        <div class="col-sm-8">
                 <h4 class="articles-heading">${i.title}</h4>
             <h6 class="articles-heading">${i.publish_date}</h6>
             <div>

@@ -1,5 +1,6 @@
 // function for owl carousel
 $('.owl-carousel').owlCarousel({
+    autoplay:true,
     //tells carousel to loop through items
     loop:true,
     //sets time delay for each item

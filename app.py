@@ -3,6 +3,7 @@ from flask import Flask, flash, render_template, redirect, request, url_for, ses
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from flask_paginate import Pagination
+from operator import itemgetter
 import bcrypt
 
 app = Flask( __name__)
@@ -176,7 +177,31 @@ def reviews():
         
     pagination = Pagination(page = page, per_page = per_page, offset = offset, total = allreviews.count(), css_framework = 'bootstrap4')
     return render_template('reviews.html', reviews = reviews_for_render, pagination = pagination)
-    
+
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+    gameName = mongo.db.reviews.find({'game_name': request.form.get('search')})
+    gameForRender = mongo.db.reviews.find({'game_name': request.form.get('search')})
+    allGameNames = mongo.db.reviews.distinct('game_name')
+    print(allGameNames)
+    #variable that determines the number of pages to paginate
+    page = int(request.args.get('page', 1))
+    # how many reviews on each page
+    per_page = 5
+    # tells function how many reviews to skip
+    offset = (page - 1) * per_page
+    reviews_for_render = gameForRender.limit(per_page).skip(offset)
+    pagination = Pagination(page = page, per_page = per_page, offset = offset, total = gameForRender.count(), css_framework = 'bootstrap4')
+    gameNameList = list(gameName)
+    game = [i['game_name'] for i in gameNameList]
+    if set(game).intersection(allGameNames):
+        return render_template('reviews.html', pagination=pagination, reviews = reviews_for_render)
+    else:
+        error_message="No results found!"
+        return render_template('reviews.html', pagination=pagination, reviews = reviews_for_render, error_message=error_message)
+ 
+    return render_template('reviews.html', pagination=pagination, reviews = reviews_for_render )
+
 # route for write-review
 @app.route('/write_review')
 def write_review():
@@ -301,5 +326,5 @@ def must_login():
 if __name__ == '__main__':
     app.secret_key = 'mysecret'
     app.run(host=os.environ.get('IP'),
-            port=int(os.environ.get('PORT')),
+            port=int(os.environ.get('PORT'),),
             debug=True)

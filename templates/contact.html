@@ -50,23 +50,23 @@
 </section>
 <!-- contact form, when submited email is sent -->
 <section class="contact-form">
-    <form onsubmit="return sendMail(this);">
+    <form id="contact-form" onsubmit="return sendMail(this);">
         <div class="row">
             <div class="col-6">
-                <input class="form-control contact-input-name" placeholder="Name" type="text" name="name" />
+                <input class="form-control contact-input-name" placeholder="Name" type="text" name="name" required/>
             </div>
             <div class="col-6">
-                <input class="form-control contact-input-email" placeholder="Email" type="email" name="email" />
+                <input class="form-control contact-input-email" placeholder="Email" type="email" name="email" required/>
             </div>
         </div>
         <div class="row">
             <div class="col-12">
-                <input type="text" name="subject" class="form-control contact-input-subject" placeholder="Subject" />
+                <input type="text" name="subject" class="form-control contact-input-subject" placeholder="Subject" required/>
             </div>
         </div>
         <div class="row">
             <div class="col-12">
-                <textarea placeholder="Message" class="form-control input-textarea" name="message" rows="7"></textarea>
+                <textarea placeholder="Message" class="form-control input-textarea" name="message" rows="7" required></textarea>
             </div>
             <div class="col-12">
                 <button class="btn btn-success send-message-btn" type="submit">Send Message</button>
