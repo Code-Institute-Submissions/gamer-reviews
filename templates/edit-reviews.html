@@ -26,10 +26,10 @@
         <div class="row">
             <div class="col-md-6 review-form">
                 <input class="form-control" type="text" name="username" value="{{ session['username']}}" required/>
-                <input class="form-control" type="text" name="game-name" placeholder="Name Of Game" value="{{review.game_name}}" required/>
-                <input class="form-control" type="text" name="dev-name" placeholder="Name Of Developers" value="{{review.dev_name}}" required/>
-                <input class="form-control" type="text" name="genre" placeholder="Genre" value="{{review.genre}}" required/>
-                <input class="form-control" type="text" name="image" placeholder="Image URL" value="{{review.image}}" required/>
+                <input class="form-control" type="text" id="game-name" name="game-name" placeholder="Name Of Game" value="{{review.game_name}}" required/>
+                <input class="form-control" type="text" id="dav-name" name="dev-name" placeholder="Name Of Developers" value="{{review.dev_name}}" required/>
+                <input class="form-control" type="text" id="genre" name="genre" placeholder="Genre" value="{{review.genre}}" required/>
+                <input class="form-control" type="text" id="image" name="image" placeholder="Image URL" value="{{review.image}}" required/>
             </div>
             <!-- range inputs that determine the value of gameplay, story, production-quality and price, the average of which gives us the total -->
             <div class="col-md-6 write-review-rating" id="test">

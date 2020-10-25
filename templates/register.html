@@ -1,4 +1,5 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% block content %}
 <!-- register.html hero image area -->
 <section>
     <div class="row container-fluid hero-image-area">
@@ -16,18 +17,16 @@
 </section>
 <!-- register form -->
 <section class="login-section container">
-    <div class="form-register">
+    <div class="form-register" name="regForm">
         <form method="post" action="{{ url_for('register') }}">
             <div class="container">
                 <h3 class="error-message">{{ error_message }}</h3>
                 <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="username" class="login-input" required>
+                <input type="text" placeholder="Enter Username" id="username-reg" name="username" class="login-input" onkeypress="regFormValidation();" required/>
 
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Password" name="password" class="login-input" required>
+                <input type="password" placeholder="Password" id="password-reg" name="password" class="login-input" onkeypress="regFormValidation();" required/>
 
-                <label for="psw"><b>Repeat Password</b></label>
-                <input type="password" placeholder="Password" name="password" class="login-input" required>
                 <button type="submit" class="submit-login-btn">Register</button>
                 <div class="container">
                     <label>
@@ -38,4 +37,7 @@
         </form>
     </div>
 </section>
+{% block endScripts %} 
+<script type="text/javascript" src="static/js/formValidationReg.js"></script>
+{% endblock %}
 {% endblock %}

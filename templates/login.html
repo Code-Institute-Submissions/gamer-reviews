@@ -1,4 +1,6 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+
+{% block content %}
 <!-- login.html hero image -->
 <section>
     <div class="row container-fluid hero-image-area">
@@ -17,14 +19,14 @@
 <!-- login form -->
 <section class="login-section container">
     <div class="form-login">
-        <form method="post" action="{{ url_for('login') }}">
+        <form method="post" action="{{ url_for('login_user') }}">
             <div class="container">
                 <h3 class="error-message">{{ error_message }}</h3>
                 <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="username" class="login-input" required>
+                <input type="text" placeholder="Enter Username" name="username" class="login-input" id="usernameLogin" onkeypress="loginFormValidation();" required>
 
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Password" name="password" class="login-input" required>
+                <input type="password" placeholder="Password" name="password" class="login-input" id="passwordLogin" onkeypress="loginFormValidation();" required>
                 <button type="submit" class="submit-login-btn">Login</button>
                 <div class="container">
                     <label>
@@ -37,4 +39,7 @@
         </form>
     </div>
 </section>
+{% block endScripts %} 
+<script type="text/javascript" src="static/js/formValidationLogin.js"></script>
+{% endblock %}
 {% endblock %}

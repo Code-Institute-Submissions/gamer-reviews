@@ -3,7 +3,6 @@ from flask import Flask, flash, render_template, redirect, request, url_for, ses
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from flask_paginate import Pagination
-from operator import itemgetter
 import bcrypt
 
 app = Flask( __name__)
@@ -21,25 +20,28 @@ mongo = PyMongo(app)
 def index():
     return render_template("index.html", reviews=mongo.db.reviews.find())
     
-# login page route
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login')
 def login():
-    # varible that stores users data 
+    return render_template("login.html")
+    
+# login page route
+@app.route('/login_user', methods=['POST'])
+def login_user():
     users = mongo.db.users
-    # variable that stores username from form 
     login_user = users.find_one({'name': request.form.get('username')})
-
+    login = users.find_one({'name': request.form.get('username')})
+    
+    if login is None:
+        error_message = "Invalid login details, please try again"
+        return render_template('login.html', error_message=error_message)
+    
     if login_user:
-        # checks encoded user password 
         if bcrypt.hashpw(request.form['password'].encode('utf-8'), login_user['password']) == login_user['password']:
             session['username'] = request.form['username']
-            #takes user to home page after login
             return render_template('index.html')
         else:
             error_message = "Invalid login details, please try again"
-            return render_template("login.html", error_message=error_message)
-
-    return render_template('login.html')
+            return render_template('login.html', error_message=error_message)
     
 # route for register.html
 @app.route('/register', methods=["POST", "GET"])
@@ -183,7 +185,6 @@ def search():
     gameName = mongo.db.reviews.find({'game_name': request.form.get('search')})
     gameForRender = mongo.db.reviews.find({'game_name': request.form.get('search')})
     allGameNames = mongo.db.reviews.distinct('game_name')
-    print(allGameNames)
     #variable that determines the number of pages to paginate
     page = int(request.args.get('page', 1))
     # how many reviews on each page
@@ -256,8 +257,12 @@ def my_reviews():
     myreviews = mongo.db.reviews.find({'name': username})
      # variable that stores the specified reviews and how many on each page and how many items to skip
     reviews_for_render = myreviews.limit(per_page).skip(offset)
+    total = myreviews.count()
     
     pagination = Pagination(page = page, per_page = per_page, offset = offset, total = myreviews.count(), css_framework = 'bootstrap4')
+    if total == 0:
+        error_message = "Sorry but you have no reviews yet"
+        return render_template('my-reviews.html', error_message=error_message, pagination=pagination, reviews = reviews_for_render)
     
     return render_template('my-reviews.html', reviews = reviews_for_render, pagination = pagination)
 
