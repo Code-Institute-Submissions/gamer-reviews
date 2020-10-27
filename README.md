@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # GamerReviews
 Gamer-reviews is a gaming review website, where users can write a review on games they have played. They can also read reviews, written by fellow gamers, on games they may intend to play in the future so they can make an informed decision before purchasing. Gamer-Reviews also has a news section. This page keeps users updated on all upcoming and new releases.
 
