@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% block scripts %}
 <!-- Script to load range.js and checkbox.js, used to process form data -->
-<script type="text/javascript" src="{{url_for('static', filename='js/range.js')}}"></script>
-<script type="text/javascript" src="{{url_for('static', filename='js/checkbox.js')}}"></script>
+<script src="{{url_for('static', filename='js/range.js')}}"></script>
+<script src="{{url_for('static', filename='js/checkbox.js')}}"></script>
 {% endblock %}
 {% block content %}
 <!-- Edit revews hero image area -->
@@ -33,24 +33,24 @@
                 <!-- checkboxes that determine what platform the games are available on -->
                 <h5>Available On:</h5>
                 <div class="form-group form-check">
-                    <input type="radio" class="form-check-input" name="platform" id="platform" value="all-platforms" oninput="checkboxVal();" required>
-                    <label class="form-check-label" for="exampleCheck1">All Platforms</label>
+                    <input type="radio" class="form-check-input" name="platform" id="all-platform" value="all-platforms" oninput="checkboxVal();" required>
+                    <label class="form-check-label" for="all-platform">All Platforms</label>
                 </div>
                 <div class="form-group form-check">
-                    <input type="radio" class="form-check-input" name="platform" id="platform" value="xbox" oninput="checkboxVal();" required>
-                    <label class="form-check-label" for="exampleCheck1">Xbox</label>
+                    <input type="radio" class="form-check-input" name="platform" id="xbox" value="xbox" oninput="checkboxVal();" required>
+                    <label class="form-check-label" for="xbox">Xbox</label>
                 </div>
                 <div class="form-group form-check">
-                    <input type="radio" class="form-check-input" name="platform" id="platform" value="ps4" oninput="checkboxVal();" required>
-                    <label class="form-check-label" for="exampleCheck1">PS4</label>
+                    <input type="radio" class="form-check-input" name="platform" id="ps4" value="ps4" oninput="checkboxVal();" required>
+                    <label class="form-check-label" for="ps4">PS4</label>
                 </div>
                 <div class="form-group form-check">
-                    <input type="radio" class="form-check-input" name="platform" id="platform" value="pc" oninput="checkboxVal();" required>
-                    <label class="form-check-label" for="exampleCheck1">P.C</label>
+                    <input type="radio" class="form-check-input" name="platform" id="pc" value="pc" oninput="checkboxVal();" required>
+                    <label class="form-check-label" for="pc">P.C</label>
                 </div>
                 <div class="form-group form-check">
-                    <input type="radio" class="form-check-input" name="platform" id="platform" value="wii u" oninput="checkboxVal();">
-                    <label class="form-check-label" for="exampleCheck1">Wii U</label>
+                    <input type="radio" class="form-check-input" name="platform" id="wii-u" value="wii u" oninput="checkboxVal();">
+                    <label class="form-check-label" for="wii-u">Wii U</label>
                 </div>
             </div>
             <!-- range inputs that determine the value of gameplay, story, production-quality and price, the average of which gives us the total -->

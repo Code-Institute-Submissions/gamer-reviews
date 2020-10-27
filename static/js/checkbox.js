@@ -1,4 +1,8 @@
 //function that gets the value of the checkbox
 function checkboxVal() {
-    var chckVal = $('#platform:checked').val();
+     $('#all-platform:checked').val();
+     $('#xbox:checked').val();
+     $('#ps4:checked').val();
+     $('#pc:checked').val();
+     $('#wii-u:checked').val();
 } 

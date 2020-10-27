@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block scripts %}
 <!-- Script to load get-articles-index.js -->
-<script type="text/javascript" src="static/js/get-articles-index.js"></script>
+<script src="static/js/get-articles-index.js"></script>
 {% endblock %}
 {% block content %}
 <!-- Bootstrap carousel for hero images and about text -->
@@ -71,19 +71,19 @@
     <div class="row">
         <div class="col-lg-3 single-read-review">
             <img src="static/images/ps4.jpg" class="read-review-img" alt="ps4">
-            <a href="{{ url_for('read_reviews_ps4')}}"><button class="read-review-btn btn btn-success">Read Reviews</button></a>
+            <a href="{{ url_for('read_reviews_ps4')}}" class="read-review-btn btn btn-success">Read Reviews</a>
         </div>
         <div class="col-lg-3 single-read-review single-read-review-border">
             <img src="static/images/steam.jpg" class="read-review-img" alt="steam">
-            <a href="{{ url_for('read_reviews_pc')}}"><button class="read-review-btn btn btn-success">Read Reviews</button></a>
+            <a href="{{ url_for('read_reviews_pc')}}" class="read-review-btn btn btn-success">Read Reviews</a>
         </div>
         <div class="col-lg-3 single-read-review single-read-review-border">
             <img src="static/images/wii.jpg" class="read-review-img" alt="wii">
-            <a href="{{ url_for('read_reviews_wii') }}"><button class="read-review-btn btn btn-success">Read Reviews</button></a>
+            <a href="{{ url_for('read_reviews_wii') }}" class="read-review-btn btn btn-success">Read Reviews</a>
         </div>
         <div class="col-lg-3 single-read-review single-read-review-border">
             <img src="static/images/xbox.jpg" class="read-review-img" alt="xbox">
-            <a href="{{ url_for('read_reviews_xbox')}}"><button class="read-review-btn btn btn-success">Read Reviews</button></a>
+            <a href="{{ url_for('read_reviews_xbox')}}" class="read-review-btn btn btn-success">Read Reviews</a>
         </div>
     </div>
 </section>
@@ -107,7 +107,7 @@
             <!-- jinja for loop that displays reviews in owl carousel -->
             {% for reviews in reviews %}
             <div class="item">
-                <img src="{{reviews.image}}" class="monthly-pick-image">
+                <img src="{{reviews.image}}" class="monthly-pick-image" alt="Review image">
                 <div class="slide-text">
                     <h4>{{reviews.game_name}}</h4>
                     <div class="meta-data">

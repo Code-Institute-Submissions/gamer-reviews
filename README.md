@@ -1,13 +1,17 @@
 # GamerReviews
-Gamer-reviews is a gaming review website, where users can write a review on games they have played. They can also read reviews, written by fellow gamers, on games they may intend to play in the future so they can make an informed decision before purchasing. Gamer-Reviews also has a news section. This page keeps users updated on all upcoming and new releases.
-
-## User Stories
+Gamer-reviews is a gaming review website, where users can write a review on games they have played. They can also read reviews, written by fellow gamers, on games they may intend to play in the future 
+so they can make an informed decision before purchasing. Gamer-Reviews also has a news section. This page keeps users updated on all upcoming and new releases.
+Link to [deployed applictation](https://git.heroku.com/gamer-review.git)
+## UX
+### User stories
 The majority of users on this site will be people who are trying to decide what game to buy next. Gamer-reviews can help users to achieve this goal by reading reviews and articles available on the site.
 * As a user, I want a site where I can read player reviews on a game so I can decide what I want to play.
 * As a user, I want a site where I can write a game review, so i can help other players decide what they want to play.
 * As a user, I want a site where I can edit and delete my reviews, so I can help other players decide what they want to play.
 * As a user, I want a site where I can get info about a game and buy the game.
 * As a user, I want a site where I can find out news on upcoming and new releases so I can make an informed decision before making a purchase.
+* As a user, I want to be fit login to write and edit my reviews
+* As a user, I want to be fit to register to write and edit my reviews
 
 link to whimsical [wireframe](https://whimsical.com/GF3LwR3awwcbkpBAMFhj32)
 
@@ -117,7 +121,7 @@ After performing the above tests i found a few bugs that have since been resolve
 * When I started using the gamespot api I was getting a CORS error. To fix this I added the cors anywhere proxy url, which fixes the issue but can leave the articles slow to load.
 
 ### Browser tests
-I tested the website on three different browsers:
+I tested the website on three different browsers to see if each page looked like it should.
 
 
 | Browser       | Microsoft Edge | Google Chrome | Firefox |
@@ -134,7 +138,7 @@ I tested the website on three different browsers:
 | Write-reviews | pass           | pass          | pass    |
 
 ### Device Sizes
-To test the site on different devices I used all the sizes on google developer tools.
+To test the site on different devices I used all the sizes on google developer tools to test the appearance and it's responsiveness.
 
 | Device Size       | Articles | Contact | Edit-reviews | Index | Login | Must-login | My-reviews | Register | Reviews | Write-Review |
 |-------------------|----------|---------|--------------|-------|-------|------------|------------|----------|---------|--------------|
@@ -199,17 +203,21 @@ To test the site on different devices I used all the sizes on google developer t
 I deployed the website to heroku. I did this by:
 * Sign in or sign up if you havent already.
 * Created a new app by clicking the create app button.
+* In heroku go to settings and set config variables.
 * Then in the terminal of your IDE type the command "heroku login" and provide your login details.
 * Then use the command "git add ."
 * Then use the command "git commit -am 'message' " with an appropriate commit message.
 * Then use the command "git push heroku master"
 * Then go back to heroku and click the open app button in the top right of the site.
 
-### Deploying Locally:
-* Sign in to github.
-* Go to [gamer-reviews](https://github.com/joe6894/gamer-reviews) repository 
-* Clone repository.
-* And lastly add project folder to any IDE.
+### Cloning Locally:
+* Under the repository's name, click Clone or download.
+* In the Clone with HTTPs section copy the given url.
+* In your IDE of choice, open git bash.
+* Change the current working directory to the location where you want the cloned to go.
+* Type git clone, and then paste the URL copied from Github.
+* Press enter and the local clone will be created.
+* Create a env.py file and set the environment for SECRET_KEY, MONGO_URI and MONGO_DBNAME.
 
 ## Credits
 ### Contents

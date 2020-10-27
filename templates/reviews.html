@@ -3,7 +3,7 @@
 <section>
     <div class="row container-fluid hero-image-area">
         <div class="col-12 hero-image">
-            <img src="static/images/black-ops-bg.jpg" class="hero-image">
+            <img src="static/images/black-ops-bg.jpg" class="hero-image" alt="hero-image">
             <div class="black-overlay">
                 <div>
                     <div class="reviews-hero-heading">
@@ -20,10 +20,8 @@
         <h3 class="error-message">{{ error_message }}</h3>
         <div class="row">
             <div class="col-12 search-area">
-                <form>
-                    <input type="search" name="search" id="review-search" class="search" placeholder="search"></input>
-                    <a href="{{url_for('search', reviews=reviews)}}"><button type="submit" class="btn btn-success search-btn"><i class="fa fa-search"></i></button></a>
-                </form>
+                    <input type="search" name="search" id="review-search" class="search" placeholder="search"/>
+                    <a href="{{url_for('search', reviews=reviews)}}" class="btn btn-success search-btn"><i class="fa fa-search"></i></a>
             </div>
         </div>
     </form>
@@ -36,7 +34,7 @@
     {% for reviews in reviews %}
     <div class="row review-area">
         <div class="col-md-4">
-            <img src="{{reviews.image}}" class="review-img">
+            <img src="{{reviews.image}}" class="review-img" alt="review image">
         </div>
         <div class="col-md-8">
             <h4 class="review-heading">{{reviews.game_name}}</h4>
@@ -66,7 +64,7 @@
                     <div class="row">
                         <!-- review image area -->
                         <div class="col-sm-6">
-                            <img src="{{reviews.image}}" class="review-img">
+                            <img src="{{reviews.image}}" class="review-img" alt="review image">
                         </div>
                         <!-- progress bars that display all different scores -->
                         <div class="col-sm-6">
@@ -118,9 +116,9 @@
                     <div class="modal-footer row container">
                         <div class="col-6 modal-btns-area">
                             <!-- button that takes user to gamestop to buy game -->
-                            <a href="https://www.gamestop.ie/Home/Index" target="_blank"><button type="button" class="btn btn-success modal-btns">Buy</button></a>
+                            <a href="https://www.gamestop.ie/Home/Index" target="_blank" class="btn btn-success modal-btns">Buy</a>
                             <!-- button that takes user to twitch to watch game -->
-                            <a href="https://www.twitch.tv/" target="_blank"><button type="button" class="btn btn-success modal-btns">Watch on  <i class="fa fa-twitch"></i></button></a>
+                            <a href="https://www.twitch.tv/" target="_blank" class="btn btn-success modal-btns">Watch on  <i class="fa fa-twitch"></i></a>
                         </div>
                         <div class="col-6 close-modal-btn-area container">
                             <!-- button that closes modal -->

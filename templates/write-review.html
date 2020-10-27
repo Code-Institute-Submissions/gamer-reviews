@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 {% block scripts %}
 <!-- Script to load range.js and checkbox.js -->
-<script type="text/javascript" src="static/js/range.js"></script>
-<script type="text/javascript" src="static/js/checkbox.js"></script>
+<script src="static/js/range.js"></script>
+<script src="static/js/checkbox.js"></script>
 {% endblock %}
 {% block content %}
 <!-- write review hero image area -->
 <section>
     <div class="row container-fluid hero-image-area">
         <div class="col-12 hero-image">
-            <img src="static/images/black-ops-bg.jpg" class="hero-image">
+            <img src="static/images/black-ops-bg.jpg" class="hero-image" alt="hero image">
             <div class="black-overlay">
                 <div>
                     <div class="reviews-hero-heading">
@@ -34,46 +34,46 @@
                 <!-- checkbox that determines what platforms the game are available -->
                 <h5>Available On:</h5>
                 <div class="form-group form-check">
-                    <input type="radio" class="form-check-input" name="platform" id="platform" value="all-platforms" oninput="checkboxVal();" required>
-                    <label class="form-check-label" for="exampleCheck1">All Platforms</label>
+                    <input type="radio" class="form-check-input" name="platform" id="all-platform" value="all-platforms" oninput="checkboxVal();" required>
+                    <label class="form-check-label" for="all-platform">All Platforms</label>
                 </div>
                 <div class="form-group form-check">
-                    <input type="radio" class="form-check-input" name="platform" id="platform" value="xbox" oninput="checkboxVal();" required>
-                    <label class="form-check-label" for="exampleCheck1">Xbox</label>
+                    <input type="radio" class="form-check-input" name="platform" id="xbox" value="xbox" oninput="checkboxVal();" required>
+                    <label class="form-check-label" for="xbox">Xbox</label>
                 </div>
                 <div class="form-group form-check">
-                    <input type="radio" class="form-check-input" name="platform" id="platform" value="ps4" oninput="checkboxVal();" required>
-                    <label class="form-check-label" for="exampleCheck1">PS4</label>
+                    <input type="radio" class="form-check-input" name="platform" id="ps4" value="ps4" oninput="checkboxVal();" required>
+                    <label class="form-check-label" for="ps4">PS4</label>
                 </div>
                 <div class="form-group form-check">
-                    <input type="radio" class="form-check-input" name="platform" id="platform" value="pc" oninput="checkboxVal();" required>
-                    <label class="form-check-label" for="exampleCheck1">P.C</label>
+                    <input type="radio" class="form-check-input" name="platform" id="pc" value="pc" oninput="checkboxVal();" required>
+                    <label class="form-check-label" for="pc">P.C</label>
                 </div>
                 <div class="form-group form-check">
-                    <input type="radio" class="form-check-input" name="platform" id="platform" value="wii u" oninput="checkboxVal();" required>
-                    <label class="form-check-label" for="exampleCheck1">Wii U</label>
+                    <input type="radio" class="form-check-input" name="platform" id="wii-u" value="wii u" oninput="checkboxVal();" required>
+                    <label class="form-check-label" for="wii-u">Wii U</label>
                 </div>
             </div>
             <!-- range inputs that take user ratings -->
             <div class="col-md-6 write-review-rating" id="test">
                 <div class="form-group">
                     <label for="myRange-1"><strong>Rate Gameplay</strong></label> 
-                    <input type="range" class="form-control-range" name="gameplay" min="1" max="100" value="1" id="myRange-1" onchange="rangeVal(); getTotal();" required>
+                    <input type="range" class="form-control-range" name="gameplay" min="1" max="100" value="1" id="myRange-1" onchange="rangeVal(); getTotal();">
                     <p class="rating">Rating: <span id="range-1"></span></p>
                 </div>
                 <div class="form-group">
                     <label for="myRange-2"><strong>Rate Story</strong></label>
-                    <input type="range" class="form-control-range" name="story" min="1" max="100" value="1" id="myRange-2" onchange="rangeVal1(); getTotal();" required>
+                    <input type="range" class="form-control-range" name="story" min="1" max="100" value="1" id="myRange-2" onchange="rangeVal1(); getTotal();">
                     <p class="rating">Rating: <span id="range-2"></span></p>
                 </div>
                 <div class="form-group">
                     <label for="myRange-3"><strong>Rate Production Quality</strong></label>
-                    <input type="range" class="form-control-range" name="production-quality" min="1" max="100" value="1" id="myRange-3" onchange="rangeVal2(); getTotal();" required>
+                    <input type="range" class="form-control-range" name="production-quality" min="1" max="100" value="1" id="myRange-3" onchange="rangeVal2(); getTotal();">
                     <p class="rating">Rating: <span id="range-3"></span></p>
                 </div>
                 <div class="form-group">
                     <label for="myRange-4"><strong>Rate Price</strong></label>
-                    <input type="range" class="form-control-range" name="price" min="1" max="100" value="1" id="myRange-4" onchange="rangeVal3(); getTotal();" required>
+                    <input type="range" class="form-control-range" name="price" min="1" max="100" value="1" id="myRange-4" onchange="rangeVal3(); getTotal();">
                     <p class="rating">Rating: <span id="range-4"></span></p>
                 </div>
                 <div class="form-group">
@@ -87,7 +87,7 @@
         <div class="row">
             <div class="col-12">
                 <h5>Write Review</h5>
-                <textarea type="textarea" name="body" placeholder="Write Review" class="form-control write-review-text" rows="5" maxlength="250" required></textarea>
+                <textarea name="body" placeholder="Write Review" class="form-control write-review-text" rows="5" maxlength="250" required></textarea>
             </div>
         </div>
         <div class="row">

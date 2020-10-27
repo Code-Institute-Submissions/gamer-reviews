@@ -4,7 +4,7 @@
 <section>
     <div class="row container-fluid hero-image-area">
         <div class="col-12 hero-image">
-            <img src="static/images/black-ops-bg.jpg" class="hero-image">
+            <img src="static/images/black-ops-bg.jpg" class="hero-image" alt="hero image">
             <div class="black-overlay">
                 <div>
                     <div class="articles-hero-heading">
@@ -17,14 +17,14 @@
 </section>
 <!-- register form -->
 <section class="login-section container">
-    <div class="form-register" name="regForm">
+    <div class="form-register">
         <form method="post" action="{{ url_for('register') }}">
             <div class="container">
                 <h3 class="error-message">{{ error_message }}</h3>
-                <label for="uname"><b>Username</b></label>
+                <label for="username-reg"><b>Username</b></label>
                 <input type="text" placeholder="Enter Username" id="username-reg" name="username" class="login-input" onkeypress="regFormValidation();" required/>
 
-                <label for="psw"><b>Password</b></label>
+                <label for="password-reg"><b>Password</b></label>
                 <input type="password" placeholder="Password" id="password-reg" name="password" class="login-input" onkeypress="regFormValidation();" required/>
 
                 <button type="submit" class="submit-login-btn">Register</button>
@@ -38,6 +38,6 @@
     </div>
 </section>
 {% block endScripts %} 
-<script type="text/javascript" src="static/js/formValidationReg.js"></script>
+<script src="static/js/formValidationReg.js"></script>
 {% endblock %}
 {% endblock %}

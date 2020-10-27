@@ -311,14 +311,11 @@ li {
     width: 40%;
 }
 
-<<<<<<< HEAD
 .heading-area {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-=======
->>>>>>> c663a0276463873c1312380c5a5415b897696d01
 .reviews {
     width: 60%;
     margin: auto;
@@ -329,11 +326,8 @@ li {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-<<<<<<< HEAD
     padding-left: 15px;
     padding-right: 15px;
-=======
->>>>>>> c663a0276463873c1312380c5a5415b897696d01
     margin: auto;
 }
 
@@ -751,11 +745,7 @@ span.psw {
     }
 }
 
-<<<<<<< HEAD
 @media only screen and (max-width: 415px) {
-=======
-@media only screen and (max-width: 410px) {
->>>>>>> c663a0276463873c1312380c5a5415b897696d01
     .monthly-picks-area {
         margin-left: 20px;
         margin-right: 20px;
@@ -975,7 +965,6 @@ span.psw {
         height: 200px;
         width: 200px;
     }
-<<<<<<< HEAD
 }
 
 @media only screen and (max-width: 770px) {
@@ -988,6 +977,4 @@ span.psw {
     .login-section {
         width: 90%;
     }
-=======
->>>>>>> c663a0276463873c1312380c5a5415b897696d01
 }

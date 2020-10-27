@@ -51,11 +51,11 @@
                         <a href="{{url_for('edit_reviews', review_id=reviews._id)}}" class="btn btn-success edit-btn"><i class="fa fa-edit"></i></a>
                     </div>
                 </div>
-                <div class="modal fade" id="delete{{reviews._id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="delete{{reviews._id}}" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete this review?</h5>
+                                <h5 class="modal-title">Are you sure you want to delete this review?</h5>
                             </div>
                             <div class="modal-footer">
                                 <a href="{{url_for('delete_reviews', review_id=reviews._id)}}" class="btn btn-success" name="delete">Delete</a>
@@ -65,21 +65,17 @@
                     </div>
                 </div>
                 <!-- modal that displays reviews data to user -->
-                <div class="modal fade" id="modal{{reviews._id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="modal{{reviews._id}}" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header row">
                                 <div class="col-12">
-                                    <h3 class="modal-title" id="exampleModalLabel"><strong>{{reviews.game_name}}</strong></h3>
+                                    <h3 class="modal-title"><strong>{{reviews.game_name}}</strong></h3>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-6">
-<<<<<<< HEAD
                                     <img src="{{reviews.image}}" class="review-img" alt="review image">
-=======
-                                    <img src="{{reviews.image}}" class="review-img">
->>>>>>> c663a0276463873c1312380c5a5415b897696d01
                                 </div>
                                 <!-- progress bars that display all different scores -->
                                 <div class="col-sm-6">
@@ -131,9 +127,9 @@
                             <div class="modal-footer row container">
                                 <div class="col-6 modal-btns-area">
                                     <!-- button that takes user to gamestop to buy the game -->
-                                    <a href="https://www.gamestop.ie/Home/Index" target="_blank"><button type="button" class="btn btn-success modal-btns">Buy</button></a>
+                                    <a href="https://www.gamestop.ie/Home/Index" target="_blank" class="btn btn-success modal-btns">Buy</a>
                                     <!-- button that takes user to twitch to watch game -->
-                                    <a href="https://www.twitch.tv/" target="_blank"><button type="button" class="btn btn-success modal-btns">Watch <i class="fab fa-twitch"></i></button></a>
+                                    <a href="https://www.twitch.tv/" target="_blank" class="btn btn-success modal-btns">Watch <i class="fab fa-twitch"></i></a>
                                 </div>
                                 <div class="col-6 close-modal-btn-area container">
                                     <!-- closes the modal -->

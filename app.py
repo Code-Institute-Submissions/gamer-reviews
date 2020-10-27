@@ -233,7 +233,22 @@ def post_review():
         "platform": request.form.get('platform'),
         "body": request.form.get('body')
     })
-    return redirect(url_for('my_reviews'))
+     # stores session username in a variable
+    username = session['username']
+    # variable that determines how many pages to paginate
+    page = int(request.args.get('page', 1))
+    # variable that stores how many reviews per page
+    per_page = 5
+    # variable that tells function how many reviews to skip
+    offset = (page - 1) * per_page
+    
+    # variable that stores all the reviews for the corresponding username
+    myreviews = mongo.db.reviews.find({'name': username})
+     # variable that stores the specified reviews and how many on each page and how many items to skip
+    reviews_for_render = myreviews.limit(per_page).skip(offset)
+    
+    pagination = Pagination(page = page, per_page = per_page, offset = offset, total = myreviews.count(), css_framework = 'bootstrap4')
+    return render_template('my-reviews.html', reviews = reviews_for_render, pagination = pagination)
 
 #contact route
 @app.route('/contact')
