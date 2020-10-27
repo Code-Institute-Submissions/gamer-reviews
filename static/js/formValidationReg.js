@@ -3,15 +3,13 @@ function regFormValidation() {
     let pass = document.getElementById('password-reg');
     
     name.addEventListener('keypress', function(event) {
-        let key = event.keyCode;
-        if (key === 32) {
+        if (event.which === 32 && event.target.selectionStart === 0) {
             event.preventDefault();
         }
     });
     
     pass.addEventListener('keypress', function(event) {
-       let key = event.keyCode;
-       if (key === 32) {
+       if (event.which === 32 && event.target.selectionStart === 0) {
            event.preventDefault();
        }
     });

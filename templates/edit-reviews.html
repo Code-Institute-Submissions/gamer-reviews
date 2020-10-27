@@ -3,6 +3,7 @@
 <!-- Script to load range.js and checkbox.js, used to process form data -->
 <script src="{{url_for('static', filename='js/range.js')}}"></script>
 <script src="{{url_for('static', filename='js/checkbox.js')}}"></script>
+<script src="{{url_for('static', filename='js/preventEmptyString.js')}}"></script>
 {% endblock %}
 {% block content %}
 <!-- Edit revews hero image area -->
@@ -25,11 +26,11 @@
     <form method="post" action="{{ url_for('update_review', review_id=review._id) }}">
         <div class="row">
             <div class="col-md-6 review-form">
-                <input class="form-control" type="text" name="username" value="{{ session['username']}}" required/>
-                <input class="form-control" type="text" id="game-name" name="game-name" placeholder="Name Of Game" value="{{review.game_name}}" required/>
-                <input class="form-control" type="text" id="dav-name" name="dev-name" placeholder="Name Of Developers" value="{{review.dev_name}}" required/>
-                <input class="form-control" type="text" id="genre" name="genre" placeholder="Genre" value="{{review.genre}}" required/>
-                <input class="form-control" type="text" id="image" name="image" placeholder="Image URL" value="{{review.image}}" required/>
+                <input class="form-control" type="text" name="username" value="{{ session['username']}}" onkeypress="preventEmptyString();" required/>
+                <input class="form-control" type="text" id="game-name" name="game-name" placeholder="Name Of Game" onkeypress="preventEmptyString();" value="{{review.game_name}}" required/>
+                <input class="form-control" type="text" id="dav-name" name="dev-name" placeholder="Name Of Developers" onkeypress="preventEmptyString();" value="{{review.dev_name}}" required/>
+                <input class="form-control" type="text" id="genre" name="genre" placeholder="Genre" value="{{review.genre}}" onkeypress="preventEmptyString();" required/>
+                <input class="form-control" type="text" id="image" name="image" placeholder="Image URL" value="{{review.image}}" onkeypress="preventEmptyString();" required/>
                 <!-- checkboxes that determine what platform the games are available on -->
                 <h5>Available On:</h5>
                 <div class="form-group form-check">

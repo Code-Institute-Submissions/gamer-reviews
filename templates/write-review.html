@@ -26,11 +26,11 @@
         <div class="row">
             <!-- text input fields that take user and game data -->
             <div class="col-md-6 review-form">
-                <input class="form-control" type="text" name="username" value="{{ session['username']}}" required/>
-                <input class="form-control" id="game-name" type="text" name="game-name" placeholder="Name Of Game" required/>
-                <input class="form-control" id="dev-name" type="text" name="dev-name" placeholder="Name Of Developers" required/>
-                <input class="form-control" id="genre" type="text" name="genre" placeholder="Genre" required/>
-                <input class="form-control" id="image" type="text" name="image" placeholder="Image URL" required/>
+                <input class="form-control" type="text" name="username" value="{{ session['username']}}" onkeypress="preventEmptyString();" required/>
+                <input class="form-control" id="game-name" type="text" name="game-name" placeholder="Name Of Game" onkeypress="preventEmptyString();" required/>
+                <input class="form-control" id="dev-name" type="text" name="dev-name" placeholder="Name Of Developers" onkeypress="preventEmptyString();" required/>
+                <input class="form-control" id="genre" type="text" name="genre" placeholder="Genre" onkeypress="preventEmptyString();" required/>
+                <input class="form-control" id="image" type="text" name="image" placeholder="Image URL" onkeypress="preventEmptyString();" required/>
                 <!-- checkbox that determines what platforms the game are available -->
                 <h5>Available On:</h5>
                 <div class="form-group form-check">
