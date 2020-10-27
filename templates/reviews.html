@@ -15,7 +15,11 @@
     </div>
 </section>
 <!-- section that displays reviews -->
+<<<<<<< HEAD
 <section class="reviews container">
+=======
+<section class="reviews">
+>>>>>>> c663a0276463873c1312380c5a5415b897696d01
     <form action="{{ url_for('search') }}" method="POST">
         <h3 class="error-message">{{ error_message }}</h3>
         <div class="row">
@@ -28,13 +32,21 @@
         </div>
     </form>
     <div class="row">
+<<<<<<< HEAD
         <div class="col-12 heading-area">
+=======
+        <div class="col-12">
+>>>>>>> c663a0276463873c1312380c5a5415b897696d01
             <h3 class="reviews-heading">Latest Reviews</h3>
         </div>
     </div>
     <!-- jinja for loop that displays reviews -->
     {% for reviews in reviews %}
+<<<<<<< HEAD
     <div class="row review-area">
+=======
+    <div class="row review-area container">
+>>>>>>> c663a0276463873c1312380c5a5415b897696d01
         <div class="col-md-4">
             <img src="{{reviews.image}}" class="review-img">
         </div>

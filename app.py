@@ -4,16 +4,25 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from flask_paginate import Pagination
 import bcrypt
+<<<<<<< HEAD
 if os.path.exists("env.py"):
     import env
+=======
+>>>>>>> c663a0276463873c1312380c5a5415b897696d01
 
 app = Flask( __name__)
 
 # reviews database name
+<<<<<<< HEAD
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 # uri for database
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
+=======
+app.config["MONGO_DBNAME"] = 'gamer-reviews'
+# uri for database
+app.config["MONGO_URI"] = 'mongodb+srv://joe:Drumgoon6894@gamerreview.85ibj.mongodb.net/gamer-reviews?retryWrites=true&w=majority'
+>>>>>>> c663a0276463873c1312380c5a5415b897696d01
 
 mongo = PyMongo(app)
 
