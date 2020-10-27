@@ -150,6 +150,7 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 60%;
     margin: auto;
     background-color: #20d8da;
 }
