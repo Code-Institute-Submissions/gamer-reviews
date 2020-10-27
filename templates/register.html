@@ -22,10 +22,10 @@
             <div class="container">
                 <h3 class="error-message">{{ error_message }}</h3>
                 <label for="username-reg"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" id="username-reg" name="username" class="login-input" onkeypress="regFormValidation();" required/>
+                <input type="text" placeholder="Enter Username" id="username-reg" name="username" class="login-input" onkeypress="preventEmptyString();"required/>
 
                 <label for="password-reg"><b>Password</b></label>
-                <input type="password" placeholder="Password" id="password-reg" name="password" class="login-input" onkeypress="regFormValidation();" required/>
+                <input type="password" placeholder="Password" id="password-reg" name="password" class="login-input" onkeypress="preventEmptyString();" required/>
 
                 <button type="submit" class="submit-login-btn">Register</button>
                 <div class="container">
