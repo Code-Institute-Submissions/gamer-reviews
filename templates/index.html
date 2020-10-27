@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% block scripts %}
+<!-- Script to load get-articles-index.js -->
+<script type="text/javascript" src="static/js/get-articles-index.js"></script>
+{% endblock %}
+{% block content %}
+<!-- Bootstrap carousel for hero images and about text -->
+<section class="hero-images">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner about-slides">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="static/images/Ghost-of-tsushima.jpg" alt="First slide">
+                <div class="black-overlay">
+                    <div class="about">
+                        <h3>About Us</h3>
+                        <p>GamerReviews is a website designed by gamers for gamers. Our main goal is to keep you up to date on upcoming and new releases and to allow you 
+                           to read reviews on games by fellow gamers so you can make an informed descion before
+                           puchasing new games</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="static/images/half-life.jpg" alt="Second slide">
+                <div class="black-overlay">
+                    <div class="about">
+                        <h3>About Us</h3>
+                        <p>GamerReviews is a website designed by gamers for gamers. Our main goal is to keep you up to date on upcoming and new releases and to allow you 
+                           to read reviews on games by fellow gamers so you can make an informed descion before
+                           puchasing new games</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="static/images/red-dead-redemption-2.jpg" alt="Third slide">
+                <div class="black-overlay">
+                    <div class="about">
+                        <h3>About Us</h3>
+                        <p>GamerReviews is a website designed by gamers for gamers. Our main goal is to keep you up to date on upcoming and new releases and to allow you 
+                           to read reviews on games by fellow gamers so you can make an informed descion before
+                           puchasing new games</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="static/images/resident-evil-3.jpeg" alt="Third slide">
+                <div class="black-overlay">
+                    <div class="about">
+                        <h3>About Us</h3>
+                        <p>GamerReviews is a website designed by gamers for gamers. Our main goal is to keep you up to date on upcoming and new releases and to allow you 
+                           to read reviews on games by fellow gamers so you can make an informed descion before
+                           puchasing new games</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="static/images/the-last-of-us.jpg" alt="Third slide">
+                <div class="black-overlay">
+                    <div class="about">
+                        <h3>About Us</h3>
+                        <p>GamerReviews is a website designed by gamers for gamers. Our main goal is to keep you up to date on upcoming and new releases and to allow you 
+                           to read reviews on games by fellow gamers so you can make an informed descion before
+                           puchasing new games</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Read reviews area, takes user to reviews.html with corresponding platform -->
+<section class="read-review">
+    <div class="row">
+        <div class="col-lg-3 single-read-review">
+            <img src="static/images/ps4.jpg" class="read-review-img" alt="ps4">
+            <a href="{{ url_for('read_reviews_ps4')}}"><button class="read-review-btn btn btn-success">Read Reviews</button></a>
+        </div>
+        <div class="col-lg-3 single-read-review single-read-review-border">
+            <img src="static/images/steam.jpg" class="read-review-img" alt="steam">
+            <a href="{{ url_for('read_reviews_pc')}}"><button class="read-review-btn btn btn-success">Read Reviews</button></a>
+        </div>
+        <div class="col-lg-3 single-read-review single-read-review-border">
+            <img src="static/images/wii.jpg" class="read-review-img" alt="wii">
+            <a href="{{ url_for('read_reviews_wii') }}"><button class="read-review-btn btn btn-success">Read Reviews</button></a>
+        </div>
+        <div class="col-lg-3 single-read-review single-read-review-border">
+            <img src="static/images/xbox.jpg" class="read-review-img" alt="xbox">
+            <a href="{{ url_for('read_reviews_xbox')}}"><button class="read-review-btn btn btn-success">Read Reviews</button></a>
+        </div>
+    </div>
+</section>
+<!-- Displays all reviews in an owl carousel -->
+<section class="monthly-picks">
+    <div class="monthly-picks-area">
+        <div class="row">
+            <div class="col-12 months-pick-heading-area">
+                <h3 class="this-months-picks-heading">This Months Picks</h3>
+            </div>
+        </div>
+        <!-- opaque background for owl carousel -->
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="opaque-background"></div>
+                </div>
+            </div>
+        </div>
+        <div class="owl-carousel">
+            <!-- jinja for loop that displays reviews in owl carousel -->
+            {% for reviews in reviews %}
+            <div class="item">
+                <img src="{{reviews.image}}" class="monthly-pick-image">
+                <div class="slide-text">
+                    <h4>{{reviews.game_name}}</h4>
+                    <div class="meta-data">
+                        <p class="carousel-data">Rating: {{reviews.total}} </p>
+                        <p class="carousel-data">{{reviews.genre}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- articles tha are displayed on the homepage -->
+<section class="articles-home">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="articles-heading">Latest Articles</h2>
+        </div>
+    </div>
+    <div class="row article-area" id="articles">
+        
+    </div>
+
+</section>
+{% endblock %}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" /> 
+    {% block scripts %}{% endblock %}
+    <title>GamerReview</title>
+</head>
+    <body onload="hideLogin();">
+        <header class="header">
+            <div class="top-header-area">
+                <div class="row">
+                    <!-- Logo area -->
+                    <div class="col-6 container logo-area">
+                        <a href="{{url_for('index')}}">
+                            <h2 class="logo">GamerReviews</h2>
+                        </a>
+                    </div>
+                    <div class="col-3 container login-area">
+                        <a href="{{url_for('login')}}">
+                            <!-- login area -->
+                            <button type="button" class="login-btn btn btn-success" id="login-register">
+                                <i class="fa fa-lock"></i>
+                            </button>
+                        </a>
+                        <!-- Logout area -->
+                        <a href="{{url_for('logout')}}"><button id="logout" type="button" class="btn btn-success logout"><i class="fa fa-sign-out"></i></button></a>
+                    </div>
+                </div>
+            </div>
+            <!--          Navigation area          -->
+            <div class="row">
+                <div class="col-6 navigation-area">
+                    <nav class="navbar sticky-top navbar-expand-md navbar-light">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{{url_for('index')}}">Home<span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Reviews
+                                </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{url_for('reviews')}}">Reviews</a>
+                                        <a class="dropdown-item" href="{{url_for('write_review')}}">Write A Review</a>
+                                        <a class="dropdown-item" href="{{url_for('my_reviews')}}">My Reviews</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url_for('articles')}}">News</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url_for('contact')}}">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <!-- Username area -->
+                <div class="col-6 container social-area">
+                    <p>Logged in as: <span id="logged-in">{{ session['username']}}</span></p>
+                </div>
+            </div>
+        </header>
+        {% block content %} {% endblock %}
+        <!-- Footer area -->
+        <footer class="footer-area">
+            <div class="row footer-inner">
+                <div class="col-lg-4 about-footer-area">
+                    <h3 class="about-footer-heading">GamerReviews</h3>
+                    <p>
+                        GamerReviews is a website designed by gamers for gamers. Our main goal is to keep you up to date on upcoming and new releases and to allow you to read reviews 
+                        on games by fellow gamers so you can make an informed descion before puchasing new games
+                    </p>
+                </div>
+                <div class="col-lg-4 social-footer-area">
+                    <h3 class="social-footer-heading">Social Links</h3>
+                    <div class="socail-footer-content">
+                        <a class="a-footer" href="#"><i class="fab fa-youtube fa-2x"></i></a>
+                        <a class="a-footer" href="#"><i class="fab fa-twitch fa-2x"></i></a>
+                        <a class="a-footer" href="#"><i class="fab fa-twitter fa-2x"></i></a>
+                        <a class="a-footer" href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a class="a-footer" href="#"><i class="fab fa-instagram fa-2x"></i></a></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 usefull-links-area">
+                    <h3 class="usefull-links-heading">UseFull Links</h3>
+                    <ul class="usefull-links-content">
+                        <li class="footer-list"><a class="a-footer" href="{{ url_for('reviews') }}">Reviews</a></li>
+                        <li class="footer-list"><a class="a-footer" href="{{ url_for('articles') }}">News</a></li>
+                        <li class="footer-list"><a class="a-footer" href="{{ url_for('contact') }}">Contact</a></li>
+                        <li class="footer-list"><a class="a-footer" href="{{ url_for('write_review') }}">Write A Review</a></li>
+                        <li class="footer-list"><a class="a-footer" href="{{ url_for('my_reviews') }}">My Rewviews</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        {% block endScripts %}{% endblock %}
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="{{url_for('static', filename='js/carousel.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static', filename='js/hideLogin.js')}}"></script>
+    </body>
+
+</html>

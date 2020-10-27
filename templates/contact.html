@@ -1,0 +1,77 @@
+{% extends 'base.html' %} {% block scripts %}
+<!-- Script to send emails using emailjs -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script src="static/js/sendEmail.js"></script>
+<script>
+    (function() {
+        emailjs.init("user_xo7QGCq0BDhkiSFWnPcGI");
+    })();
+</script>
+{% endblock %} {% block content %}
+<!-- contact hero image area -->
+<section>
+    <div class="row container-fluid hero-image-area">
+        <div class="col-12 hero-image">
+            <img src="static/images/black-ops-bg.jpg" class="hero-image" alt="Hero Image">
+            <div class="black-overlay">
+                <div>
+                    <div class="reviews-hero-heading">
+                        Contact
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact info -->
+<section>
+    <div class="row contact-area">
+        <div class="col-md-7 about-contact">
+            <h3>GamerReviews</h3>
+            <p>
+                GamerReviews is a website designed by gamers for gamers. Our main goal is to keep you up to date on upcoming and new releases and to allow you to read reviews on games by fellow gamers so you can make an informed descion before puchasing new games
+            </p>
+        </div>
+        <div class="col-md-5 container">
+            <div class="contact-info">
+                <i class="fa fa-home fa-2x"></i>
+                <p>Park Street, Monaghan, Co.Monaghan</p>
+            </div>
+            <div class="contact-info">
+                <i class="fa fa-envelope fa-2x"></i>
+                <p>jk2764168@gmail.com</p><br>
+            </div>
+            <div class="contact-info">
+                <i class="fa fa-phone fa-2x"></i>
+                <p>0871234567</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact form, when submited email is sent -->
+<section class="contact-form">
+    <form id="contact-form" onsubmit="return sendMail(this);">
+        <div class="row">
+            <div class="col-6">
+                <input class="form-control contact-input-name" placeholder="Name" type="text" name="name" required/>
+            </div>
+            <div class="col-6">
+                <input class="form-control contact-input-email" placeholder="Email" type="email" name="email" required/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <input type="text" name="subject" class="form-control contact-input-subject" placeholder="Subject" required/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <textarea placeholder="Message" class="form-control input-textarea" name="message" rows="7" required></textarea>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-success send-message-btn" type="submit">Send Message</button>
+            </div>
+        </div>
+    </form>
+</section>
+{% endblock %}

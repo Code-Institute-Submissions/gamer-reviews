@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- must login hero image area -->
+<section>
+    <div class="row container-fluid hero-image-area">
+        <div class="col-12 hero-image">
+            <img src="static/images/black-ops-bg.jpg" class="hero-image" alt="Hero image">
+            <div class="black-overlay">
+                <div>
+                    <div class="reviews-hero-heading">
+                        Must login
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- text and image that displays to tell users that they must login before access to this page is allowed -->
+<div class="login-error-title container">
+    <h4>You must login to access this page</h4>
+</div>
+<div class="sadface-area container">
+    <img src="static/images/red-sad-face.png" class="sad-face" alt="sad face">
+</div>
+{% endblock %}

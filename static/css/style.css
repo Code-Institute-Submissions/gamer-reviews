@@ -1,0 +1,980 @@
+.row {
+    margin: 0;
+}
+
+.col-12,
+.col-4,
+.col-8,
+.col-6 {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none !important;
+    color: #000000;
+}
+
+li {
+    list-style: none !important;
+}
+
+.btn-success:hover {
+    background-color: #20d8da;
+    opacity: 0.6;
+}
+
+.btn {
+    background-color: #20d8da;
+}
+
+/*-------------------- base.html styles ------------------------------*/
+
+.logo {
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.header {
+    width: 60%;
+    margin: auto;
+}
+
+.footer-area {
+    background-color: #000000;
+    color: #fafafa;
+    width: 100%;
+}
+
+.login-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-btn {
+    float: right;
+    background-color: #20d8da;
+}
+
+.logout {
+    float: right;
+    background-color: #20d8da;
+}
+
+.social-area {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation-area {
+    padding: 0;
+}
+
+.navbar {
+    padding: 0;
+}
+
+.footer-inner {
+    width: 70%;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.about-footer-area {
+    padding-left: 20px;
+}
+
+.social-footer-area {
+    padding-left: 20px;
+}
+
+.usefull-links-area {
+    padding-left: 20px;
+}
+
+.about-footer-heading {
+    padding-bottom: 50px;
+}
+
+.social-footer-heading {
+    padding-bottom: 50px;
+}
+
+.usefull-links-heading {
+    margin: 0;
+    padding-bottom: 50px;
+}
+
+.social-footer-content {
+    padding: 0;
+    margin: 0;
+}
+
+.usefull-links-content {
+    padding: 0;
+    margin: 0;
+}
+
+
+.footer-list {
+    padding-bottom: 10px;
+}
+
+.a-footer {
+    margin: 10px;
+    color: #fafafa;
+}
+
+/*---------------------------- index.html styles ----------------------------*/
+
+.about-slides {
+    height: auto;
+}
+
+.single-read-review-border {
+    border-left: solid 1px;
+}
+
+.read-review {
+    margin: 50px;
+}
+
+.read-review-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: #20d8da;
+}
+
+.read-review-img {
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.about {
+    margin-top: 300px;
+    margin-left: 200px;
+    border-left: solid 2px #20d8da;
+    color: #fafafa;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 40%;
+}
+
+.monthly-picks {
+    background-color: #000000;
+    color: #fafafa;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    padding-bottom: 50px;
+}
+
+.monthly-picks-area {
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.this-months-picks-heading {
+    padding-top: 100px;
+    z-index: 7000;
+    border-bottom: solid 1px #7d7a7c;
+}
+
+.owl-next,
+.owl-prev {
+    display: none;
+}
+
+.owl-carousel {
+    margin-top: 50px;
+}
+
+.months-pick-heading-area {
+    padding: 0;
+}
+
+.monthly-pick-image {
+    height: 350px;
+}
+
+.game-title {
+    color: #fafafa;
+}
+
+.carousel-data {
+    margin-bottom: 0px;
+}
+
+.opaque-background {
+    position: relative;
+    z-index: 6000;
+}
+
+.opaque-background::before {
+    position: absolute;
+    width: 100%;
+    height: 687px;
+    left: -1110px;
+    content: '';
+    background-color: rgba(14, 14, 14, 0.8);
+    z-index: 6000;
+    overflow: hidden;
+}
+
+.opaque-background::after {
+    position: absolute;
+    width: 100%;
+    height: 687px;
+    left: 1110px;
+    content: '';
+    background-color: rgba(14, 14, 14, 0.8);
+    z-index: 6000;
+    overflow: hidden;
+}
+
+.articles-home {
+    width: 60%;
+    margin: auto;
+    padding-top: 100px;
+}
+
+.articles-heading {
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+.article-area {
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.article-img {
+    width: 100%;
+    height: 221px;
+    margin-bottom: 40px;
+}
+
+.article-img-modal {
+    width: 100%;
+}
+
+.modal-header {
+    text-align: center;
+}
+
+.modal-article-area {
+    padding: 10px;
+}
+
+.full-article-url {
+    padding: 10px;
+}
+
+.carousel-item {
+    position: relative !important;
+}
+
+.read-article-btn {
+    margin-bottom: 30px;
+    margin-left: 20px;
+    background-color: #20d8da;
+}
+
+.close-modal-btn {
+    background-color: #20d8da;
+}
+
+/*---------------------------- reviews.html styles --------------------------*/
+
+.reviews-hero-heading {
+    color: #fafafa;
+    font-size: 100px;
+    margin-top: 300px;
+    margin-left: 200px;
+    border-left: solid 2px #20d8da;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 40%;
+}
+
+.heading-area {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.reviews {
+    width: 60%;
+    margin: auto;
+    padding-top: 100px;
+}
+
+.search-area {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+}
+
+.search {
+    border: 1px solid lightgrey;
+    height: 40px;
+    color: black;
+}
+
+.search-btn {
+    background-color: #20d8da;
+    height: 40px;
+    margin-left: 20px;
+}
+
+.reviews-heading {
+    padding-top: 20px;
+}
+
+.review-area {
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.review-heading {
+    padding-left: 20px;
+    color: #000000;
+}
+
+.review-content {
+    padding-left: 20px;
+    overflow: hidden;
+    height: auto;
+}
+
+.review-img {
+    width: 100%;
+    height: 300px;
+}
+
+.rating-heading {
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+
+.progress {
+    margin: 10px;
+}
+
+.close-modal-btn-area {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.modal-btns-area {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.modal-header {
+    text-align: center;
+}
+
+.modal-btns {
+    background-color: #20d8da;
+    margin: 5px;
+}
+
+/*---------------------------- articles.html styles -------------------------*/
+
+.article-content {
+    padding-left: 20px;
+    overflow: hidden;
+    height: auto;
+}
+
+.articles-hero-heading {
+    color: #fafafa;
+    font-size: 100px;
+    margin-top: 300px;
+    margin-left: 200px;
+    border-left: solid 2px #20d8da;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 40%;
+}
+
+.author {
+    float: right;
+}
+
+/*---------------------------- contact.html styles ------------------------- */
+
+.contact-area {
+    width: 70%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.about-contact {
+    border-bottom: 1px solid;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 6px;
+}
+
+.fa-home {
+    padding-right: 30px;
+}
+
+.fa-envelope {
+    padding-right: 30px;
+}
+
+.fa-phone {
+    padding-right: 40px;
+}
+
+.contact-form {
+    width: 70%;
+    margin: auto;
+}
+
+.contact-input-name {
+    width: 100%;
+    margin-right: 10px;
+}
+
+.contact-input-email {
+    width: 100%;
+    margin-left: 10px;
+}
+
+.contact-input-subject {
+    width: 100%;
+}
+
+.input-textarea {
+    width: 100%;
+}
+
+.send-message-btn {
+    width: 100%;
+    background-color: #20d8da;
+    border: none;
+    margin-bottom: 50px;
+}
+
+/*---------------------------- login.html styles ----------------------------*/
+
+span.psw {
+    float: right;
+}
+
+.login-section {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.login-input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.submit-login-btn {
+    background-color: #20d8da;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.error-message {
+    padding-bottom: 40px;
+    color: red;
+    text-align: center;
+}
+
+/*---------------------------- must-login.html styles -----------------------*/
+
+.login-error-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.sad-face {
+    width: 400px;
+    height: 400px;
+}
+
+.sadface-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+/*---------------------------- my-reviews.html styles -----------------------*/
+
+.delete-btn,
+.edit-btn {
+    background-color: #20d8da;
+    float: right;
+    margin-right: 5px;
+}
+
+.read-btn-small {
+    display: none;
+}
+
+.read-my-review-btn {
+    margin-left: 20px;
+    background-color: #20d8da;
+}
+
+/*---------------------------- write-review.html styles  --------------------*/
+
+.write-a-review {
+    width: 70%;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.form-control {
+    margin-left: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.form-check {
+    display: inline-block;
+    margin: 5px;
+}
+
+.write-review-text {
+    width: 100%;
+}
+
+.submit-btn-area {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-btn {
+    background-color: #20d8da;
+    border: none;
+}
+
+.rating {
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 0px;
+}
+
+.input-check {
+    display: inline-block;
+}
+
+.form-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+/*---------------------------- Universal styles --------------------*/
+
+.black-overlay {
+    margin: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-image {
+    width: 100%;
+    padding: 0;
+}
+
+.hero-image-area {
+    padding: 0;
+}
+
+/*---------------------------- Media Queries --------------------*/
+
+@media only screen and (max-width: 410px) {
+    .reviews-hero-heading,
+    .articles-hero-heading {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .reviews-hero-heading {
+        font-size: 75px;
+        margin-top: 200px;
+        margin-left: 75px;
+    }
+}
+
+@media only screen and (max-width: 1025px) {
+    .reviews-hero-heading {
+        font-size: 75px;
+        margin-left: 75px;
+        margin-top: 100px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .social-area {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .header {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .login-btn {
+        display: none;
+    }
+
+    .login-area {
+        padding: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .header {
+        width: 100%;
+        margin: auto;
+    }
+
+    .logo {
+        color: black;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .about-slides {
+        height: auto;
+    }
+
+    .login-btn-small {
+        background-color: #20d8da;
+    }
+
+}
+
+@media only screen and (min-width: 600px) {
+    .login-btn-small {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .about-slides {
+        height: 794px;
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    .about {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .single-read-review {
+        width: 400px;
+        margin: auto;
+        padding-top: 20px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .single-read-review-border {
+        border: none;
+    }
+}
+
+@media only screen and (max-width: 415px) {
+    .monthly-picks-area {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media only screen and (max-width: 1036px) {
+    .articles-home {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .articles-home {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 1327px) {
+    .articles-home {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 466px) {
+    .articles-home {
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width: 843px) {
+    .article-content {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .footer-inner {
+        width: 90%;
+        margin: auto;
+    }
+
+    .about-footer-heading {
+        padding-top: 50px;
+    }
+
+    .usefull-links-heading {
+        padding-top: 50px;
+    }
+
+    .reviews-footer-heading {
+        padding-top: 50px;
+    }
+}
+
+@media only screen and (max-width: 1331px) {
+    .articles-hero-heading {
+        font-size: 75px;
+        margin-top: 200px;
+        margin-left: 100px;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .articles-hero-heading {
+        font-size: 50px;
+        margin-top: 150px;
+        margin-left: 50px;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .articles-hero-heading {
+        font-size: 30px;
+        margin-top: 100px;
+        margin-left: 30px;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .articles-hero-heading {
+        font-size: 20px;
+        margin-top: 60px;
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    .articles {
+        width: 90%;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .articles {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    .reviews-hero-heading {
+        font-size: 50px;
+        margin-top: 100px;
+        margin-left: 50px;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .reviews-hero-heading {
+        font-size: 30px;
+        margin-top: 100px;
+        margin-left: 30px;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .reviews-hero-heading {
+        font-size: 20px;
+        margin-top: 60px;
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .reviews {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .reviews {
+        width: 90%;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .reviews {
+        width: 100%;
+        padding-top: 50px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .review-area {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .review-img {
+        height: 220px;
+    }
+}
+
+@media only screen and (max-width: 1390px) {
+    .review-content {
+        height: auto;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .review-content {
+        height: 118px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .read-btn-small {
+        background-color: #20d8da;
+        display: flex;
+    }
+
+    .delete-btn,
+    .edit-btn {
+        margin-right: 0px;
+    }
+
+    .read-my-review-btn {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .write-a-review {
+        width: 90%;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    .form-control {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .contact-area {
+        width: 90%;
+    }
+
+    .contact-form {
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .about-contact {
+        border-bottom: none;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .sad-face {
+        height: 200px;
+        width: 200px;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .login-section {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    .login-section {
+        width: 90%;
+    }
+}

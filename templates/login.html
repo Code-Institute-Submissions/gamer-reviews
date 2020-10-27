@@ -1,0 +1,45 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+<!-- login.html hero image -->
+<section>
+    <div class="row container-fluid hero-image-area">
+        <div class="col-12 hero-image">
+            <img src="static/images/black-ops-bg.jpg" class="hero-image" alt="hero image">
+            <div class="black-overlay">
+                <div>
+                    <div class="articles-hero-heading">
+                        Login
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- login form -->
+<section class="login-section container">
+    <div class="form-login">
+        <form method="post" action="{{ url_for('login_user') }}">
+            <div class="container">
+                <h3 class="error-message">{{ error_message }}</h3>
+                <label for="usernameLogin"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="username" class="login-input" id="usernameLogin" onkeypress="loginFormValidation();" required>
+
+                <label for="passwordLogin"><b>Password</b></label>
+                <input type="password" placeholder="Password" name="password" class="login-input" id="passwordLogin" onkeypress="loginFormValidation();" required>
+                <button type="submit" class="submit-login-btn">Login</button>
+                <div class="container">
+                    <label>
+                        <input class="input-check" type="checkbox" checked="checked" name="remember">Remember Me
+                    </label>
+                    <!-- link to register.html -->
+                    <span class="psw">Don't have an account, click here to <a href="{{url_for('register')}}">Register</a></span>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+{% block endScripts %} 
+<script src="static/js/formValidationLogin.js"></script>
+{% endblock %}
+{% endblock %}
