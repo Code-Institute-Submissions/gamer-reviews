@@ -1,3 +1,5 @@
+// function that hides login button when user is logged in 
+// and hides logout button when user isnt signed in
 function hideLogin() {
     let logged = document.getElementById("logged-in").textContent;
     let loginButton = document.getElementById("login-register");

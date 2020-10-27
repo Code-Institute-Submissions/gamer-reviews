@@ -1,3 +1,4 @@
+// function that prevents empty string
 function preventEmptyString() {
   let inputs = document.getElementsByClassName('form-control').value;
   
