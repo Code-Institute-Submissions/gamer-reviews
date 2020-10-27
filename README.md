@@ -224,19 +224,3 @@ I deployed the website to heroku. I did this by:
 * The layout for this page was inspired by a color [Color Libs Template](https://colorlib.com/wp/template/egames/)
 * I got help from my code institute mentor Precious Ijege.
 * I also got help from [w3schools](https://www.w3schools.com/) and [developer.mozilla](https://developer.mozilla.org/en-US/).
-=======
-         ___        ______     ____ _                 _  ___  
-        / \ \      / / ___|   / ___| | ___  _   _  __| |/ _ \ 
-       / _ \ \ /\ / /\___ \  | |   | |/ _ \| | | |/ _` | (_) |
-      / ___ \ V  V /  ___) | | |___| | (_) | |_| | (_| |\__, |
-     /_/   \_\_/\_/  |____/   \____|_|\___/ \__,_|\__,_|  /_/ 
- ----------------------------------------------------------------- 
-
-
-Hi there! Welcome to AWS Cloud9!
-
-To get started, create some files, play with the terminal,
-or visit https://docs.aws.amazon.com/console/cloud9/ for our documentation.
-
-Happy coding!
->>>>>>> c663a0276463873c1312380c5a5415b897696d01
