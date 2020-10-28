@@ -10,8 +10,9 @@ The majority of users on this site will be people who are trying to decide what 
 * As a user, I want a site where I can edit and delete my reviews, so I can help other players decide what they want to play.
 * As a user, I want a site where I can get info about a game and buy the game.
 * As a user, I want a site where I can find out news on upcoming and new releases so I can make an informed decision before making a purchase.
-* As a user, I want to be fit login to write and edit my reviews
-* As a user, I want to be fit to register to write and edit my reviews
+* As a user, I want to be fit login to write and edit my reviews.
+* As a user, I want to be fit to register to write and edit my reviews.
+* As a user, I want to be fit to search for a game review by name.
 
 link to whimsical [wireframe](https://whimsical.com/GF3LwR3awwcbkpBAMFhj32)
 
